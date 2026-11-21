@@ -31,6 +31,7 @@
   .card .time { font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; font-weight:600; color:var(--sage-deep); margin-top:2px; }
   .card p { margin-top:8px; font-size:.97rem; }
   .card .act { margin-top:14px; }
+  .part { font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; font-weight:600; color:var(--burnt); margin-top:20px; }
   .steps { counter-reset:s; margin-top:14px; }
   .steps li { list-style:none; counter-increment:s; position:relative; padding:0 0 14px 40px; font-size:.97rem; }
   .steps li::before { content:counter(s); position:absolute; left:0; top:0; width:27px; height:27px; border-radius:50%; background:var(--sand); font-weight:600; font-size:.82rem; display:flex; align-items:center; justify-content:center; }
@@ -99,15 +100,28 @@
     <div class="n">2</div>
     <div>
       <h3>Connect Claude to your website</h3>
-      <div class="time">Once only &middot; about ten minutes</div>
-      <p>This puts a copy of your website on your laptop and gives Claude permission to publish for you.</p>
+      <div class="time">Once only &middot; about fifteen minutes</div>
+      <p>There are two parts. First, in your browser, you give Claude permission to reach your GitHub and your Supabase. Supabase is the small database behind your freebie sign-ups and your mother-daughter app. Each permission is called a connector. Then, in PowerShell, Claude puts a copy of your website on your laptop.</p>
+      <div class="part">Part one &middot; in your browser</div>
       <ol class="steps">
-        <li>Open PowerShell, type <span class="type">claude</span> and press Enter, the same way you do now.</li>
-        <li>Copy the words below and paste them in.
-          <div class="prompt"><span class="say">Say this to Claude</span><div class="text" id="p1">Download my website from https://github.com/wholewomancollective/jm-wellbeing-website into a new folder called whole-woman-website inside my Documents folder. Then sign me in to GitHub on this laptop so you can publish changes for me. My GitHub username is wholewomancollective. Walk me through each step, one at a time.</div><button class="btn copy" data-from="p1">Copy</button></div>
+        <li>Press the button below. It opens Claude in your browser, on a page called Connectors. If it asks you to sign in, use your usual Claude login. It needs to be the same Claude account that PowerShell uses, so if you only have one Claude account you are set.
+          <div class="act" style="margin:10px 0 6px;"><a class="btn" href="https://claude.ai/customize/connectors" target="_blank" rel="noopener">Open Connectors</a></div>
+          If the button lands somewhere else, choose Customise in the menu on the left, then Connectors.
         </li>
-        <li>GitHub opens a page in your browser and asks you to sign in and approve. It may give you a short code to type in. That approval is the permission Claude needs. There is nothing for you to copy or save.</li>
+        <li>Find GitHub on that page. There is a search box, and if you see the word Discover, press that first. Press GitHub in the list, then press the button that says Connect or Add. A GitHub page opens. Sign in as wholewomancollective and approve.</li>
+        <li>Back on the Connectors page, do the same for Supabase. Sign in with the Supabase login you made today, choose the organisation you created today if it asks, and approve.</li>
+        <li>GitHub and Supabase now both show in your list of connectors. Part one is done.</li>
       </ol>
+      <div class="part">Part two &middot; in PowerShell</div>
+      <ol class="steps">
+        <li>Open PowerShell, type <span class="type">claude</span> and press Enter, the same way you do now. If Claude was already open, close PowerShell and open it again so Claude picks up your two new connectors.</li>
+        <li>Type <span class="type">/mcp</span> and press Enter. This shows a list of everything Claude is connected to. GitHub and Supabase should be in the list. Press Esc to go back. If one is missing, type <span class="type">/login</span>, press Enter and sign in with your Claude account, then try <span class="type">/mcp</span> again.</li>
+        <li>Copy the words below, paste them in and press Enter.
+          <div class="prompt"><span class="say">Say this to Claude</span><div class="text" id="p1">Download my website from https://github.com/wholewomancollective/jm-wellbeing-website into a new folder called whole-woman-website inside my Documents folder. I have connected GitHub and Supabase to Claude in my browser, so check you can see both. Then make sure you can publish changes to my website from this laptop. If GitHub needs me to sign in on this laptop as well, walk me through it. My GitHub username is wholewomancollective. One step at a time.</div><button class="btn copy" data-from="p1">Copy</button></div>
+        </li>
+        <li>If GitHub opens a page in your browser and asks you to sign in and approve, go ahead. If Claude shows you a short code in PowerShell, type that code into the GitHub page when it asks. You do not need to keep the code afterwards.</li>
+      </ol>
+      <p>You are done when Claude tells you your website is in the whole-woman-website folder and that it can publish for you.</p>
     </div>
   </div>
 
@@ -162,12 +176,14 @@
   </details>
 
   <h2>Keys and <em>sign-ins</em></h2>
-  <p class="lede">A key is a password that lets one tool talk to another. You need one sign-in and one key.</p>
+  <p class="lede">A key is a password that lets one tool talk to another. Your two connectors from number 2 above need no keys. There is one key to create, whenever you are ready.</p>
 
   <div class="panel">
-    <h3>GitHub, so Claude can publish your website</h3>
-    <p>No key to copy. You gave permission in step 2 by signing in through your browser. If Claude ever says it cannot publish, say this.</p>
-    <div class="prompt"><span class="say">Say this to Claude</span><div class="text" id="p11">Sign me in to GitHub again so you can publish my website. My username is wholewomancollective. Walk me through it.</div><button class="btn copy" data-from="p11">Copy</button></div>
+    <h3>GitHub and Supabase, so Claude can reach them</h3>
+    <p>No keys to copy. You connected both in number 2 above by signing in through your browser. If Claude ever says it cannot publish your website, or cannot see your Supabase, say this.</p>
+    <div class="prompt"><span class="say">Say this to Claude</span><div class="text" id="p11">Check your connectors for GitHub and Supabase. If either one is not working, tell me what to click to fix it, one step at a time. My GitHub username is wholewomancollective.</div><button class="btn copy" data-from="p11">Copy</button></div>
+    <p style="margin-top:14px;">The Connectors page is where both connectors live, if you ever need to connect one again.</p>
+    <div class="act"><a class="btn" href="https://claude.ai/customize/connectors" target="_blank" rel="noopener">Open Connectors</a></div>
   </div>
 
   <div class="panel">
@@ -176,7 +192,7 @@
     <ol class="steps">
       <li>Go to <a href="https://resend.com/signup" target="_blank" rel="noopener">resend.com</a> and make a free account. Use the email address where you want the sign-up messages to arrive.</li>
       <li>In Resend, open the page called API Keys and create a key. Copy it straight away and keep that page open.</li>
-      <li>Open the Secrets page of your Supabase account. Supabase is the small database that sits behind your freebie sign-ups and your app.
+      <li>Open the Secrets page of your Supabase account.
         <div class="act" style="margin:10px 0 4px;"><a class="btn" href="https://supabase.com/dashboard/project/iqmfbhtusygvdxynfzzg/functions/secrets" target="_blank" rel="noopener">Open the Secrets page</a></div>
       </li>
       <li>Add two entries. Each has a name and a value. Then press Save.

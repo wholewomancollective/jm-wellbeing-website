@@ -27,6 +27,15 @@ Plain HTML files. No build step and no framework. Each page is one file with its
 
 Live at https://thewholewomancollective.com.au. Hosted free on GitHub Pages from the `main` branch of `wholewomancollective/jm-wellbeing-website`. Everything in this folder is public on the internet.
 
+## Connections
+
+Jacqui has connected two connectors to her Claude account in the browser (claude.ai, Customise, then Connectors): GitHub and Supabase. Both should show when she types `/mcp`. If one is missing, ask her to type `/login` and sign in with her Claude account, then check again. If it is still missing, she can connect it again at https://claude.ai/customize/connectors.
+
+- GitHub. Her account is `wholewomancollective`. Publish with `git push` from this folder. If git on this laptop is not signed in, walk her through signing in through her browser, one step at a time. The GitHub connector is the fallback if git will not sign in.
+- Supabase. Her project ref is `iqmfbhtusygvdxynfzzg`. It is the home for her freebie sign-ups (names, email addresses, phone numbers) and for the data behind her mother-daughter app. Kelly is moving these across in late November 2026, so the tables may not be there yet.
+- Treat everything in Supabase as private. Read only, unless Jacqui asks for a change. Never delete or change a table, a row, a function or a secret without her clear yes. Never copy sign-up details into any file in this folder.
+- Never ask Jacqui to paste a secret key into this chat. Keys go into the Secrets page of her Supabase dashboard, typed in by her.
+
 ## Do not change without asking Jacqui
 
 - `CNAME`. This file connects the website to her web address. Changing or deleting it takes the site offline.
