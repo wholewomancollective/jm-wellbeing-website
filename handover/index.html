@@ -28,7 +28,7 @@
   .card { background:#fff; border-radius:10px; padding:24px 22px; margin-top:16px; box-shadow:0 8px 26px rgba(47,55,33,.08); display:grid; grid-template-columns:54px 1fr; gap:6px 14px; }
   .card .n { font-family:'Cormorant Garamond',Georgia,serif; font-size:2.6rem; line-height:1; color:var(--burnt); }
   .card h3 { font-family:'Cormorant Garamond',Georgia,serif; font-weight:500; font-size:1.45rem; line-height:1.15; }
-  .card .time { font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; font-weight:600; color:var(--sage-deep); margin-top:2px; }
+  .card .time, .panel .time { font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; font-weight:600; color:var(--sage-deep); margin-top:2px; }
   .card p { margin-top:8px; font-size:.97rem; }
   .card .act { margin-top:14px; }
   .part { font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; font-weight:600; color:var(--burnt); margin-top:20px; }
@@ -139,6 +139,31 @@
     </div>
   </div>
 
+  <h2>Bring your sign-ups <em>home</em></h2>
+  <p class="lede">Two more jobs, for after the three above. Any time before <span class="date">21 December</span> is fine. Right now, when someone signs up for The Morning Anchor, their details are saved in my Supabase account. The first job saves them in yours from now on. It has to be done from your side, because it is your account. Claude does the work and you say yes at each step.</p>
+
+  <div class="panel">
+    <h3>Your freebie sign-ups</h3>
+    <div class="time">About fifteen minutes</div>
+    <ol class="steps">
+      <li>Open PowerShell, type <span class="type">claude</span> and press Enter.</li>
+      <li>Copy the words below, paste them in and press Enter.
+        <div class="prompt"><span class="say">Say this to Claude</span><div class="text" id="p12">In my whole-woman-website folder, read CLAUDE.md first and get the latest version of my website from GitHub. Then follow the steps in _backend/freebie-signups/SETUP.md from start to finish, to set up my freebie sign-ups in my own Supabase. Explain each step to me in plain words before you do it and wait for my yes.</div><button class="btn copy" data-from="p12">Copy</button></div>
+      </li>
+      <li>Claude will ask which email address should get a message when someone signs up. Give it the address where you want those messages to arrive. The messages themselves switch on once your Resend key is in, which is covered in Keys and sign-ins further down.</li>
+      <li>You are done when Claude tells you a test sign-up landed in your Supabase and your freebie page now sends sign-ups to your account. Then message me, so I can close off my old copy.</li>
+    </ol>
+    <p>Nothing is lost while you wait to do this. As of 22 November no one has signed up yet, so there is nothing to move across. Sign-ups keep saving on my side until you switch, and I will pass on any that arrive.</p>
+  </div>
+
+  <div class="panel">
+    <h3>The database behind your mother-daughter app</h3>
+    <div class="time">About twenty minutes &middot; do this one second</div>
+    <p>The same idea for your Come Home to Each Other app. Leave it until the freebie one has worked, or save it for our next session and we will do it together.</p>
+    <div class="prompt"><span class="say">Say this to Claude</span><div class="text" id="p13">Download my mother-daughter app from https://github.com/wholewomancollective/come-home-to-each-other into a new folder called mother-daughter-app inside my Documents folder. Read CLAUDE.md in that folder first. Then follow the steps in _backend/SETUP.md from start to finish, to set up my app's database in my own Supabase. Explain each step to me in plain words before you do it and wait for my yes.</div><button class="btn copy" data-from="p13">Copy</button></div>
+    <p style="margin-top:14px;">You are done when Claude tells you the app now runs on your Supabase. Nothing is lost here either. The only pairings so far are test ones, and no one has written any words in the app yet. If the app is on your own phone from testing, open it and tap Start over from scratch once.</p>
+  </div>
+
   <h2>Change your website <em>any time</em></h2>
   <p class="lede">You say what you want in plain words. Claude does the typing, shows you the change and publishes it when you say so. You do not need to send changes to me.</p>
 
@@ -202,7 +227,7 @@
         <p style="margin-top:4px;">Value: your email address, the same one you used for Resend.</p>
       </li>
     </ol>
-    <p>The sign-up emails start once I have finished moving your sign-up storage into your Supabase. You can add the key before or after.</p>
+    <p>The sign-up emails start once your sign-ups are saving in your own Supabase. That is the first job in Bring your sign-ups home, further up this page. You can add the key before or after.</p>
   </div>
 
   <div class="panel">
@@ -228,23 +253,23 @@
   <details class="fold">
     <summary>Where everything lives</summary>
     <div class="in">
-      <p>These are in your own accounts, with your own logins. The one exception is your old address, at the bottom of the list.</p>
+      <p>Almost everything here is in your own accounts, with your own logins. Two rows still lean on me for now, and each one says so.</p>
       <div class="row"><div class="k">Your web address</div><div>thewholewomancollective.com.au, in your Crazy Domains account.</div></div>
       <div class="row"><div class="k">Your website</div><div>In your GitHub account (username wholewomancollective), in the project called jm-wellbeing-website. It holds your home page, Calmer Pathways, the Morning Anchor freebie page, your brand board and this page.</div></div>
       <div class="row"><div class="k">The Morning Anchor freebie</div><div><a href="https://thewholewomancollective.com.au/morning-anchor/" target="_blank" rel="noopener">thewholewomancollective.com.au/morning-anchor</a>. This is the link to share and to use in ads.</div></div>
       <div class="row"><div class="k">Mother-daughter app</div><div>Also in your GitHub account, in the project called come-home-to-each-other. Its new address is <a href="https://wholewomancollective.github.io/come-home-to-each-other/" target="_blank" rel="noopener">wholewomancollective.github.io/come-home-to-each-other</a>.</div></div>
-      <div class="row"><div class="k">Sign-ups and the app engine</div><div>Your Supabase account, in the project you created today. I am still moving these across.</div></div>
+      <div class="row"><div class="k">Sign-ups and the app database</div><div>Your Supabase account. You set these up with Claude in the part of this page called Bring your sign-ups home. Until then they keep running on my side.</div></div>
       <div class="row"><div class="k">Ad tracking</div><div>Your Meta pixel is on your home page, Calmer Pathways and the freebie page. It is the tracker that tells Facebook and Instagram which ads worked. It counts page visits, and it counts a lead each time someone signs up for The Morning Anchor.</div></div>
       <div class="row"><div class="k">Bookings</div><div>Zanda, as before. Every Book a Session button still goes to your Zanda page.</div></div>
       <div class="row"><div class="k">Your email and old address</div><div>info@jmwellbeing.com.au runs through your old address, jmwellbeing.com.au. I still look after the settings for that address. Keep it renewed until you have a new email on your new address.</div></div>
     </div>
   </details>
 
-  <h2>What I am still <em>finishing for you</em></h2>
+  <h2>What happens <em>on my side</em></h2>
   <div class="panel">
     <ul class="plain">
-      <li>Moving the storage for your freebie sign-ups, and the engine behind the mother-daughter app, into your own Supabase account.</li>
-      <li>Switching on the sign-up emails, once your Resend key is in.</li>
+      <li>Until you have done Bring your sign-ups home, your sign-ups and your app keep running on my side. Nothing stops working.</li>
+      <li>When you tell me each one is done, I check it and close off my old copy.</li>
     </ul>
   </div>
 

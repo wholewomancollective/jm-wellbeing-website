@@ -1,0 +1,4 @@
+# Keeps the notes file for Claude out of the published website. The file stays in this project.
+# Folders that start with an underscore, such as _backend, are never published.
+exclude:
+  - CLAUDE.md
