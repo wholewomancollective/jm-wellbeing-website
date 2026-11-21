@@ -52,6 +52,14 @@
   .sign { margin-top:46px; font-size:1.03rem; }
   .sign .name { font-family:'Cormorant Garamond',Georgia,serif; font-size:1.7rem; font-style:italic; margin-top:6px; }
   footer { margin-top:34px; font-size:.82rem; color:#69735a; }
+  details.fold { background:#fff; border-radius:10px; margin-top:18px; box-shadow:0 8px 26px rgba(47,55,33,.08); }
+  details.fold summary { cursor:pointer; padding:20px 22px; font-family:'Cormorant Garamond',Georgia,serif; font-size:1.35rem; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:12px; }
+  details.fold summary::-webkit-details-marker { display:none; }
+  details.fold summary::after { content:'Open'; font-family:'Work Sans',sans-serif; font-size:.66rem; letter-spacing:.16em; text-transform:uppercase; font-weight:600; color:var(--sage-deep); }
+  details.fold[open] summary::after { content:'Close'; }
+  details.fold .in { padding:0 22px 22px; }
+  .keyname { display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-top:8px; }
+  .date { display:inline-block; background:var(--yellow); padding:2px 10px; border-radius:20px; font-weight:500; font-size:.9rem; }
   @media (max-width:560px) { .card { grid-template-columns:40px 1fr; } .card .n { font-size:2rem; } .row { grid-template-columns:1fr; gap:2px; } }
 </style>
 </head>
@@ -63,7 +71,7 @@
     <h1>Whole Woman Collective <em>is yours.</em></h1>
     <p>Hi Jacqui,</p>
     <p>What a session. Your website now sits in your own accounts and lives at your new address. 👏🏽👏🏽</p>
-    <p>Most of the work is done. There are three small things for you below. Everything after that is here for when you need it, so there is no rush to read it all today.</p>
+    <p>There are three small things to set up below. After that you can change anything on your website yourself, any time, by telling Claude AI what you want. Everything further down the page is here for when you need it, so there is no rush to read it all today.</p>
   </header>
 
   <div class="address">
@@ -74,7 +82,7 @@
     <a class="btn y" href="https://thewholewomancollective.com.au/" target="_blank" rel="noopener">Open your website</a>
   </div>
 
-  <h2>Three small things <em>for you</em></h2>
+  <h2>Three small things <em>to set up</em></h2>
 
   <div class="card">
     <div class="n">1</div>
@@ -90,43 +98,42 @@
   <div class="card">
     <div class="n">2</div>
     <div>
-      <h3>Choose your colours</h3>
-      <div class="time">A look and a reply</div>
-      <p>Your brand board has three colour sets, A, B and C. The colours come from your own nature photos. Set A uses the four main colours as they appear in your photos.</p>
-      <p>Tell me A, B or C. Then I put your colours and your photos on the website.</p>
-      <div class="act"><a class="btn" href="https://thewholewomancollective.com.au/brand-board/" target="_blank" rel="noopener">Open your brand board</a></div>
+      <h3>Connect Claude to your website</h3>
+      <div class="time">Once only &middot; about ten minutes</div>
+      <p>This puts a copy of your website on your laptop and gives Claude permission to publish for you.</p>
+      <ol class="steps">
+        <li>Open PowerShell, type <span class="type">claude</span> and press Enter, the same way you do now.</li>
+        <li>Copy the words below and paste them in.
+          <div class="prompt"><span class="say">Say this to Claude</span><div class="text" id="p1">Download my website from https://github.com/wholewomancollective/jm-wellbeing-website into a new folder called whole-woman-website inside my Documents folder. Then sign me in to GitHub on this laptop so you can publish changes for me. My GitHub username is wholewomancollective. Walk me through each step, one at a time.</div><button class="btn copy" data-from="p1">Copy</button></div>
+        </li>
+        <li>GitHub opens a page in your browser and asks you to sign in and approve. It may give you a short code to type in. That approval is the permission Claude needs. There is nothing for you to copy or save.</li>
+      </ol>
     </div>
   </div>
 
   <div class="card">
     <div class="n">3</div>
     <div>
-      <h3>Send me your favourites</h3>
-      <div class="time">When you have them</div>
-      <p>The photos you most want on your website, and any nature videos you have filmed yourself: water coming in over sand, sunsets, wattle. Put them in our shared Mentoring folder in Dropbox, where your nature photos already are.</p>
+      <h3>Make it look like you</h3>
+      <div class="time">Your colours and your photos</div>
+      <p>Your brand board has three colour sets, A, B and C. The colours come from your own nature photos. Set A uses the four main colours as they appear in your photos.</p>
+      <div class="act"><a class="btn" href="https://thewholewomancollective.com.au/brand-board/" target="_blank" rel="noopener">Open your brand board</a></div>
+      <p style="margin-top:16px;">Pick the set you love, then ask Claude to put it on your website. Change the letter A below if you chose B or C.</p>
+      <div class="prompt"><span class="say">Say this to Claude</span><div class="text" id="p6">In my whole-woman-website folder, read CLAUDE.md first and get the latest version of my website from GitHub. Then read brand-board/index.html. Recolour my home page and my Calmer Pathways page using colour set A from the brand board. Put my sand and sea textures behind the coloured sections the way the brand board shows. Keep the moving wattle video at the top of the home page. Show me both pages before publishing.</div><button class="btn copy" data-from="p6">Copy</button></div>
+      <p style="margin-top:16px;">Then bring in your own photos and videos. Put the ones you want to use in one folder on your laptop first.</p>
+      <div class="prompt"><span class="say">Say this to Claude</span><div class="text" id="p7">In my whole-woman-website folder, read CLAUDE.md first and get the latest version of my website from GitHub. I want my own photos and videos on my website in place of the stock pictures. Mine are in this folder: [paste the folder location here]. Show me which pictures on my home page and Calmer Pathways page are stock, suggest which of mine could replace each one, and wait for my yes before changing anything.</div><button class="btn copy" data-from="p7">Copy</button></div>
     </div>
   </div>
 
-  <h2>Change your website <em>yourself</em></h2>
-  <p class="lede">You make changes by telling Claude AI what you want in plain words. Claude does the typing, shows you the change and publishes it when you say so.</p>
-
-  <div class="panel">
-    <h3>The first time only</h3>
-    <p>This brings a copy of your website onto your laptop so Claude can work on it.</p>
-    <ol class="steps">
-      <li>Open PowerShell, type <span class="type">claude</span> and press Enter, the same way you do now.</li>
-      <li>Copy the words below and paste them in.
-        <div class="prompt"><span class="say">Say this to Claude</span><div class="text" id="p1">Download my website from https://github.com/wholewomancollective/jm-wellbeing-website into a new folder called whole-woman-website inside my Documents folder. If GitHub asks me to sign in, walk me through it one step at a time. My GitHub username is wholewomancollective.</div><button class="btn copy" data-from="p1">Copy</button></div>
-      </li>
-    </ol>
-  </div>
+  <h2>Change your website <em>any time</em></h2>
+  <p class="lede">You say what you want in plain words. Claude does the typing, shows you the change and publishes it when you say so. You do not need to send changes to me.</p>
 
   <div class="panel">
     <h3>Every time you want a change</h3>
     <ol class="steps">
       <li>Open PowerShell, type <span class="type">claude</span> and press Enter.</li>
-      <li>Say what you want. Start with the words below, then add your change at the end.
-        <div class="prompt"><span class="say">Say this to Claude</span><div class="text" id="p2">In my whole-woman-website folder, get the latest version of my website from GitHub first. Then make this change and show me what you changed before publishing: </div><button class="btn copy" data-from="p2">Copy</button></div>
+      <li>Start with the words below, then add your change at the end.
+        <div class="prompt"><span class="say">Say this to Claude</span><div class="text" id="p2">In my whole-woman-website folder, read CLAUDE.md first and get the latest version of my website from GitHub. Then make this change and show me what you changed before publishing: </div><button class="btn copy" data-from="p2">Copy</button></div>
       </li>
       <li>Claude will ask your permission before it changes anything. Read what it says, then say yes.</li>
       <li>When you like what you see, say this.
@@ -139,34 +146,94 @@
   <div class="panel">
     <h3>A good first one to try</h3>
     <p>Your Calmer Pathways page still shows 29 May 2026 as the next start date. Swap in your new date.</p>
-    <div class="prompt"><span class="say">Say this to Claude</span><div class="text" id="p4">In my whole-woman-website folder, get the latest version of my website from GitHub first. On the Calmer Pathways page, change the next cohort date from 29 May 2026 to [type your new date here], everywhere it appears. Show me what you changed before publishing.</div><button class="btn copy" data-from="p4">Copy</button></div>
+    <div class="prompt"><span class="say">Say this to Claude</span><div class="text" id="p4">In my whole-woman-website folder, read CLAUDE.md first and get the latest version of my website from GitHub. On the Calmer Pathways page, change the next cohort date from 29 May 2026 to [type your new date here], everywhere it appears. Show me what you changed before publishing.</div><button class="btn copy" data-from="p4">Copy</button></div>
     <p style="margin-top:16px;">If a change ever looks wrong, say this and your website goes back to how it was.</p>
     <div class="prompt"><span class="say">Say this to Claude</span><div class="text" id="p5">Undo the last change on my website and publish.</div><button class="btn copy" data-from="p5">Copy</button></div>
   </div>
 
-  <h2>Where everything <em>lives</em></h2>
-  <p class="lede">These are in your own accounts, with your own logins. The one exception is your old address, at the bottom of the list.</p>
+  <details class="fold">
+    <summary>More things you can ask Claude</summary>
+    <div class="in">
+      <p>Each one starts the same way, so Claude reads the notes I left for it about your website.</p>
+      <div class="prompt"><span class="say">Add a new program</span><div class="text" id="p8">In my whole-woman-website folder, read CLAUDE.md first and get the latest version of my website from GitHub. Add a new section to my home page for my new program. Here is what it is called and what it is about: [type a few lines here]. Match the style of the Calmer Pathways section. Show me before publishing.</div><button class="btn copy" data-from="p8">Copy</button></div>
+      <div class="prompt"><span class="say">Change some words</span><div class="text" id="p9">In my whole-woman-website folder, read CLAUDE.md first and get the latest version of my website from GitHub. On my home page, find the part that says [paste the words that are there now] and change it to [type your new words]. Show me before publishing.</div><button class="btn copy" data-from="p9">Copy</button></div>
+      <div class="prompt"><span class="say">Change my prices</span><div class="text" id="p10">In my whole-woman-website folder, read CLAUDE.md first and get the latest version of my website from GitHub. Show me every price on my home page and my Calmer Pathways page in a list. Then I will tell you which ones to change.</div><button class="btn copy" data-from="p10">Copy</button></div>
+    </div>
+  </details>
+
+  <h2>Keys and <em>sign-ins</em></h2>
+  <p class="lede">A key is a password that lets one tool talk to another. You need one sign-in and one key.</p>
+
   <div class="panel">
-    <div class="row"><div class="k">Your web address</div><div>thewholewomancollective.com.au, in your Crazy Domains account.</div></div>
-    <div class="row"><div class="k">Your website</div><div>In your GitHub account (username wholewomancollective), in the project called jm-wellbeing-website. It holds your home page, Calmer Pathways, the Morning Anchor freebie page, your brand board and this page.</div></div>
-    <div class="row"><div class="k">The Morning Anchor freebie</div><div><a href="https://thewholewomancollective.com.au/morning-anchor/" target="_blank" rel="noopener">thewholewomancollective.com.au/morning-anchor</a>. This is the link to share and to use in ads.</div></div>
-    <div class="row"><div class="k">Mother-daughter app</div><div>Also in your GitHub account, in the project called come-home-to-each-other. Its new address is <a href="https://wholewomancollective.github.io/come-home-to-each-other/" target="_blank" rel="noopener">wholewomancollective.github.io/come-home-to-each-other</a>.</div></div>
-    <div class="row"><div class="k">Ad tracking</div><div>Your Meta pixel is on your home page, Calmer Pathways and the freebie page. It is the tracker that tells Facebook and Instagram which ads worked. It counts page visits, and it counts a lead each time someone signs up for The Morning Anchor.</div></div>
-    <div class="row"><div class="k">Bookings</div><div>Zanda, as before. Every Book a Session button still goes to your Zanda page.</div></div>
-    <div class="row"><div class="k">Your email and old address</div><div>info@jmwellbeing.com.au runs through your old address, jmwellbeing.com.au. I still look after the settings for that address. Keep it renewed until you have a new email on your new address.</div></div>
+    <h3>GitHub, so Claude can publish your website</h3>
+    <p>No key to copy. You gave permission in step 2 by signing in through your browser. If Claude ever says it cannot publish, say this.</p>
+    <div class="prompt"><span class="say">Say this to Claude</span><div class="text" id="p11">Sign me in to GitHub again so you can publish my website. My username is wholewomancollective. Walk me through it.</div><button class="btn copy" data-from="p11">Copy</button></div>
   </div>
+
+  <div class="panel">
+    <h3>Resend, so you get an email when someone signs up</h3>
+    <p>This is the one key you create. Resend is a free service that sends you a message each time someone signs up for The Morning Anchor.</p>
+    <ol class="steps">
+      <li>Go to <a href="https://resend.com/signup" target="_blank" rel="noopener">resend.com</a> and make a free account. Use the email address where you want the sign-up messages to arrive.</li>
+      <li>In Resend, open the page called API Keys and create a key. Copy it straight away and keep that page open.</li>
+      <li>Open the Secrets page of your Supabase account. Supabase is the small database that sits behind your freebie sign-ups and your app.
+        <div class="act" style="margin:10px 0 4px;"><a class="btn" href="https://supabase.com/dashboard/project/iqmfbhtusygvdxynfzzg/functions/secrets" target="_blank" rel="noopener">Open the Secrets page</a></div>
+      </li>
+      <li>Add two entries. Each has a name and a value. Then press Save.
+        <div class="keyname"><span class="type" id="k1">JACQUI_RESEND_KEY</span><button class="btn copy" data-from="k1" style="padding:7px 12px;">Copy name</button></div>
+        <p style="margin-top:4px;">Value: the key you copied from Resend.</p>
+        <div class="keyname"><span class="type" id="k2">JACQUI_NOTIFY_EMAIL</span><button class="btn copy" data-from="k2" style="padding:7px 12px;">Copy name</button></div>
+        <p style="margin-top:4px;">Value: your email address, the same one you used for Resend.</p>
+      </li>
+    </ol>
+    <p>The sign-up emails start once I have finished moving your sign-up storage into your Supabase. You can add the key before or after.</p>
+  </div>
+
+  <div class="panel">
+    <h3>The one rule for keys</h3>
+    <p>A key lives in one place only: that Secrets page. Never in a website file, an email, a message or a photo of your screen. Your website files are public, so Claude has been told never to put a key in them. If a key ever gets out, delete it in Resend and make a new one.</p>
+  </div>
+
+  <h2>One month with me, <em>then all yours</em></h2>
+  <p class="lede">I stay on as your helper until <span class="date">21 December 2026</span>. Until then I can still see and edit your website and your Supabase, so I can step in if you get stuck.</p>
+  <div class="panel">
+    <h3>On 21 December, to finish the transfer</h3>
+    <ol class="steps">
+      <li>In GitHub, remove me from both projects. Open each link, find aiwithsoulofficial in the list and remove it.
+        <div class="act" style="margin-top:10px;"><a class="btn" href="https://github.com/wholewomancollective/jm-wellbeing-website/settings/access" target="_blank" rel="noopener">Website helpers</a> <a class="btn" style="margin-top:8px;" href="https://github.com/wholewomancollective/come-home-to-each-other/settings/access" target="_blank" rel="noopener">App helpers</a></div>
+      </li>
+      <li>In Supabase, open your Team page and remove me from the list.
+        <div class="act" style="margin-top:10px;"><a class="btn" href="https://supabase.com/dashboard/org/_/team" target="_blank" rel="noopener">Open your Team page</a></div>
+      </li>
+      <li>I hand you the last piece I am holding, which is the forward from your old address, and I delete my old copies of your website.</li>
+    </ol>
+  </div>
+
+  <details class="fold">
+    <summary>Where everything lives</summary>
+    <div class="in">
+      <p>These are in your own accounts, with your own logins. The one exception is your old address, at the bottom of the list.</p>
+      <div class="row"><div class="k">Your web address</div><div>thewholewomancollective.com.au, in your Crazy Domains account.</div></div>
+      <div class="row"><div class="k">Your website</div><div>In your GitHub account (username wholewomancollective), in the project called jm-wellbeing-website. It holds your home page, Calmer Pathways, the Morning Anchor freebie page, your brand board and this page.</div></div>
+      <div class="row"><div class="k">The Morning Anchor freebie</div><div><a href="https://thewholewomancollective.com.au/morning-anchor/" target="_blank" rel="noopener">thewholewomancollective.com.au/morning-anchor</a>. This is the link to share and to use in ads.</div></div>
+      <div class="row"><div class="k">Mother-daughter app</div><div>Also in your GitHub account, in the project called come-home-to-each-other. Its new address is <a href="https://wholewomancollective.github.io/come-home-to-each-other/" target="_blank" rel="noopener">wholewomancollective.github.io/come-home-to-each-other</a>.</div></div>
+      <div class="row"><div class="k">Sign-ups and the app engine</div><div>Your Supabase account, in the project you created today. I am still moving these across.</div></div>
+      <div class="row"><div class="k">Ad tracking</div><div>Your Meta pixel is on your home page, Calmer Pathways and the freebie page. It is the tracker that tells Facebook and Instagram which ads worked. It counts page visits, and it counts a lead each time someone signs up for The Morning Anchor.</div></div>
+      <div class="row"><div class="k">Bookings</div><div>Zanda, as before. Every Book a Session button still goes to your Zanda page.</div></div>
+      <div class="row"><div class="k">Your email and old address</div><div>info@jmwellbeing.com.au runs through your old address, jmwellbeing.com.au. I still look after the settings for that address. Keep it renewed until you have a new email on your new address.</div></div>
+    </div>
+  </details>
 
   <h2>What I am still <em>finishing for you</em></h2>
   <div class="panel">
     <ul class="plain">
-      <li>Moving the storage for your freebie sign-ups, and the engine behind the mother-daughter app, into your own Supabase account. Supabase is the small database that sits behind them.</li>
-      <li>Switching on an email to you each time someone signs up for The Morning Anchor. For this I will need a key from a free Resend account in your name. I will tell you when, and show you where it goes.</li>
-      <li>Putting your chosen colours and your own photos on the website, once you have picked A, B or C.</li>
+      <li>Moving the storage for your freebie sign-ups, and the engine behind the mother-daughter app, into your own Supabase account.</li>
+      <li>Switching on the sign-up emails, once your Resend key is in.</li>
     </ul>
   </div>
 
   <h2>Next time <em>we meet</em></h2>
-  <p class="lede">In a week or two: your Meta ads plan, and one last check that every login is in your hands.</p>
+  <p class="lede">In a week or two: your Meta ads plan, and a check that every login is in your hands.</p>
 
   <div class="sign">
     <p>Any questions, message me. 🤗</p>
