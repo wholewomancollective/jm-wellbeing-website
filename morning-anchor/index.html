@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Morning Anchor - a free gift from Jacqui McGregor</title>
+<meta name="description" content="A gentle 3-step morning practice to reset your nervous system and begin your day steady, not empty. A free download for women carrying too much for too long.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --walnut: #4A3728;
+    --cedar: #6B8F71;
+    --gold: #4A7A5A;
+    --amber: #C4A87E;
+    --linen: #F7F3ED;
+    --earth: #2D2418;
+    --drift: #D4C5A9;
+    --shadow-rest: 0 2px 16px rgba(45,36,24,0.06);
+    --shadow-hover: 0 10px 40px rgba(74,55,40,0.16);
+    --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 300;
+    color: var(--earth);
+    background: var(--linen);
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  img { display: block; max-width: 100%; }
+  a { text-decoration: none; color: inherit; }
+  .font-heading { font-family: 'Cormorant Garamond', serif; }
+  em { font-style: italic; }
+
+  .wrap { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 28px; }
+  .eyebrow {
+    font-family: 'Work Sans', sans-serif; font-weight: 500;
+    font-size: 0.72rem; letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--gold);
+  }
+  .divider { display:flex; align-items:center; gap:14px; justify-content:center; margin: 0 auto; max-width: 300px; }
+  .divider .l { flex:1; height:1px; background: var(--gold); opacity:.5; }
+  .divider .s { color: var(--gold); font-size: 15px; opacity:.85; }
+
+  .btn {
+    display:inline-block; background: var(--walnut); color: var(--linen);
+    font-weight: 500; font-size: .95rem; letter-spacing: 0.02em;
+    padding: 17px 40px; border-radius: 6px; border:none; cursor:pointer;
+    transition: all .4s var(--ease); box-shadow: var(--shadow-rest);
+  }
+  .btn:hover { background: var(--earth); transform: translateY(-2px); box-shadow: var(--shadow-hover); }
+
+  /* ---------- HERO ---------- */
+  .hero { padding: 74px 0 60px; position: relative; overflow: hidden; }
+  .hero-grid { display:grid; grid-template-columns: 1.15fr 0.85fr; gap: 56px; align-items:center; }
+  .hero .eyebrow { display:block; margin-bottom: 20px; }
+  .hero h1 { font-family:'Cormorant Garamond', serif; font-weight:400; color: var(--walnut); font-size: 3.9rem; line-height: 1.04; letter-spacing:.01em; }
+  .hero h1 em { color: var(--gold); font-weight: 500; }
+  .hero .sub { font-family:'Cormorant Garamond', serif; font-size: 1.5rem; font-style: italic; color: var(--cedar); margin: 20px 0 20px; line-height:1.4; font-weight:300; }
+  .hero .desc { font-size: 1.02rem; max-width: 30rem; margin-bottom: 30px; color:#4a3f31; }
+  .hero-cta-note { display:block; margin-top:14px; font-size:.82rem; letter-spacing:.02em; color: var(--cedar); }
+  .cover-frame {
+    position: relative; padding: 22px; background: #fff; border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(74,55,40,0.22); transform: rotate(2deg);
+    transition: transform .5s var(--ease);
+  }
+  .cover-frame:hover { transform: rotate(0deg) translateY(-4px); }
+  .cover-frame img { border-radius: 3px; }
+  .cover-tag {
+    position:absolute; top:-16px; left:-16px; background: var(--gold); color:#fff;
+    font-size:.68rem; font-weight:600; letter-spacing:.18em; text-transform:uppercase;
+    padding: 9px 16px; border-radius: 30px; transform: rotate(-3deg); box-shadow: var(--shadow-rest);
+  }
+
+  /* ---------- SECTION BASE ---------- */
+  section.band { padding: 66px 0; }
+  .section-head { text-align:center; max-width: 42rem; margin: 0 auto 46px; }
+  .section-head .eyebrow { display:block; margin-bottom: 16px; }
+  .section-head h2 { font-family:'Cormorant Garamond', serif; font-weight:400; color: var(--walnut); font-size: 2.7rem; line-height:1.1; }
+  .section-head h2 em { color: var(--cedar); }
+  .section-head p { margin-top: 16px; font-size: 1.05rem; color:#4a3f31; }
+
+  /* resonance */
+  .resonance { background: var(--walnut); color: var(--linen); text-align:center; }
+  .resonance .eyebrow { color: var(--amber); }
+  .resonance h2 { font-family:'Cormorant Garamond', serif; font-weight:400; font-size: 2.5rem; line-height:1.3; max-width: 40rem; margin: 0 auto; color: var(--linen); }
+  .resonance h2 em { color: var(--amber); font-style: italic; }
+  .resonance .small { margin-top: 22px; color: var(--drift); font-size: 1rem; }
+
+  /* value stack */
+  .steps { display:grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+  .step-card {
+    background:#fff; border: 0.7px solid rgba(139,115,85,0.18); border-radius: 10px;
+    padding: 34px 26px; box-shadow: var(--shadow-rest); transition: all .4s var(--ease);
+  }
+  .step-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+  .step-num {
+    width: 46px; height: 46px; border-radius: 50%; border: 1px solid var(--gold);
+    display:flex; align-items:center; justify-content:center; font-family:'Cormorant Garamond',serif;
+    font-size: 1.5rem; color: var(--gold); margin-bottom: 18px; background: rgba(107,143,113,0.08);
+  }
+  .step-card h3 { font-family:'Cormorant Garamond',serif; font-weight:500; color: var(--walnut); font-size: 1.5rem; margin-bottom: 8px; }
+  .step-card p { font-size: .96rem; color:#4a3f31; }
+  .bonus {
+    margin-top: 28px; text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size: 1.2rem; color: var(--cedar);
+  }
+
+  /* outcomes */
+  .outcomes { background: rgba(212,197,169,0.16); }
+  .outcome-list { max-width: 40rem; margin: 0 auto; display:flex; flex-direction:column; gap: 18px; }
+  .outcome { display:flex; gap: 16px; align-items:flex-start; }
+  .outcome .mark { color: var(--gold); font-size: 1.3rem; line-height:1.3; flex:0 0 auto; }
+  .outcome p { font-size: 1.08rem; color: var(--earth); }
+  .outcome strong { font-weight: 500; color: var(--walnut); }
+
+  /* about */
+  .about-grid { display:grid; grid-template-columns: 0.8fr 1.2fr; gap: 48px; align-items:center; }
+  .about-photo { border-radius: 10px; overflow:hidden; box-shadow: var(--shadow-hover); }
+  .about-photo img { width:100%; height: 420px; object-fit: cover; object-position: center top; }
+  .about-body .eyebrow { display:block; margin-bottom: 14px; }
+  .about-body h2 { font-family:'Cormorant Garamond', serif; font-weight:400; color: var(--walnut); font-size: 2.4rem; line-height:1.12; margin-bottom: 18px; }
+  .about-body p { font-size: 1.02rem; color:#4a3f31; margin-bottom: 14px; }
+  .about-body .sig { font-family:'Cormorant Garamond', serif; font-size: 1.7rem; color: var(--walnut); margin-top: 6px; }
+
+  /* ---------- FORM ---------- */
+  .optin { background: var(--walnut); color: var(--linen); padding: 74px 0; }
+  .optin .eyebrow { color: var(--amber); }
+  .optin-card { max-width: 40rem; margin: 0 auto; text-align:center; }
+  .optin h2 { font-family:'Cormorant Garamond', serif; font-weight:400; font-size: 2.7rem; line-height:1.1; color: var(--linen); margin: 16px 0 12px; }
+  .optin h2 em { color: var(--amber); }
+  .optin .lead { color: var(--drift); font-size: 1.05rem; margin-bottom: 34px; }
+
+  form.lead-form { display:flex; flex-direction:column; gap: 14px; max-width: 27rem; margin: 0 auto; text-align:left; }
+  .field label { display:block; font-size:.74rem; letter-spacing:.14em; text-transform:uppercase; color: var(--amber); margin-bottom: 7px; font-weight:500; }
+  .field input {
+    width:100%; padding: 15px 18px; border-radius: 6px; border: 1px solid rgba(212,197,169,0.4);
+    background: rgba(247,243,237,0.06); color: var(--linen); font-size: 1rem; transition: all .3s var(--ease);
+  }
+  .field input::placeholder { color: rgba(212,197,169,0.55); }
+  .field input:focus { outline:none; border-color: var(--amber); background: rgba(247,243,237,0.12); }
+  .field input.invalid { border-color: #c98b6e; }
+  form.lead-form .btn { background: var(--amber); color: var(--walnut); margin-top: 10px; width:100%; font-weight:600; }
+  form.lead-form .btn:hover { background: #d4bd94; }
+  .form-fine { margin-top: 16px; font-size:.78rem; color: rgba(212,197,169,0.75); text-align:center; line-height:1.6; }
+  .err-msg { color:#e6b8a4; font-size:.8rem; margin-top:2px; display:none; }
+  .err-msg.show { display:block; }
+
+  /* success state */
+  .success { display:none; text-align:center; max-width: 34rem; margin: 0 auto; }
+  .success.show { display:block; animation: fade .6s var(--ease); }
+  @keyframes fade { from { opacity:0; transform: translateY(12px);} to {opacity:1; transform:none;} }
+  .success .tick { width:64px; height:64px; margin:0 auto 22px; border-radius:50%; border:1.5px solid var(--amber); display:flex; align-items:center; justify-content:center; color: var(--amber); font-size:1.8rem; }
+  .success h2 { font-family:'Cormorant Garamond',serif; font-weight:400; color:var(--linen); font-size:2.4rem; margin-bottom:14px; }
+  .success p { color: var(--drift); font-size:1.02rem; margin-bottom: 26px; }
+
+  /* footer */
+  footer { text-align:center; padding: 44px 0; color: var(--cedar); font-size:.85rem; }
+  footer .divider { margin-bottom: 22px; }
+  footer .name { font-family:'Cormorant Garamond',serif; font-size:1.3rem; color: var(--walnut); }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 44px; text-align:center; }
+    .hero .desc { margin-left:auto; margin-right:auto; }
+    .cover-frame { max-width: 300px; margin: 0 auto; }
+    .steps { grid-template-columns: 1fr; }
+    .about-grid { grid-template-columns: 1fr; gap: 30px; }
+    .about-photo img { height: 340px; }
+    .hero h1 { font-size: 3rem; }
+    .divider.center { max-width:100%; }
+  }
+  @media (max-width: 560px) {
+    .hero h1 { font-size: 2.5rem; }
+    .section-head h2, .optin h2 { font-size: 2.1rem; }
+    .resonance h2 { font-size: 1.9rem; }
+    .wrap { padding: 0 22px; }
+  }
+</style>
+  <!-- Meta Pixel -->
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '2261887714671594');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2261887714671594&ev=PageView&noscript=1" alt=""></noscript>
+  <!-- End Meta Pixel -->
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">A free gift &middot; Come Home to Yourself</span>
+      <h1>Wake up <em>steady</em>, before the day asks anything of you.</h1>
+      <p class="sub">The Morning Anchor</p>
+      <p class="desc">A gentle three-step morning practice to settle your nervous system and begin the day from steady, not from empty. It takes five minutes, and it happens before your feet even touch the floor.</p>
+      <a href="#get" class="btn">Send me the practice</a>
+      <span class="hero-cta-note">Free PDF &middot; yours in under a minute</span>
+    </div>
+    <div class="hero-visual">
+      <div class="cover-frame">
+        <span class="cover-tag">Free Download</span>
+        <img src="pdf-cover.png" alt="The Morning Anchor - free download cover">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESONANCE ============ -->
+<section class="band resonance">
+  <div class="wrap">
+    <span class="eyebrow">If this is you</span>
+    <h2 style="margin-top:18px;">You wake already behind. Already bracing. Already carrying it for everyone before you have even carried yourself. <em>It does not have to begin this way.</em></h2>
+    <p class="small">You have been the strong one for a long time. This is a small way to give a little of that care back to yourself.</p>
+  </div>
+</section>
+
+<!-- ============ VALUE STACK ============ -->
+<section class="band">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">What is inside</span>
+      <h2>Three small things,<br>done before you <em>rise</em></h2>
+      <p>No app to download. No hour you do not have. Just a practice that works from the body, where the tension actually lives.</p>
+    </div>
+    <div class="steps">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h3>Land in your body</h3>
+        <p>Come out of your racing head and back into yourself - a gentle body scan that shows you exactly where you have been holding on.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h3>Breathe yourself clear</h3>
+        <p>Jacqui's signature breath - the one she has leaned on for years - to move the heaviness out and let a real, settled calm arrive.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h3>Anchor your day</h3>
+        <p>Two quiet lines that set the tone before the world sets it for you, so you can come back to centre whenever you drift.</p>
+      </div>
+    </div>
+    <p class="bonus">Plus a quiet page to come back to, whenever you need it.</p>
+  </div>
+</section>
+
+<!-- ============ OUTCOMES ============ -->
+<section class="band outcomes">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">What changes</span>
+      <h2>Imagine your mornings <em>felt</em> different</h2>
+    </div>
+    <div class="outcome-list">
+      <div class="outcome"><span class="mark">&#10022;</span><p>You wake and <strong>your body feels steady</strong>, instead of that instant clench of everything you have to do.</p></div>
+      <div class="outcome"><span class="mark">&#10022;</span><p>You start the day <strong>from calm, not from catch-up</strong> - and the whole day feels more possible for it.</p></div>
+      <div class="outcome"><span class="mark">&#10022;</span><p>You have a tool that <strong>lives in your body</strong>, not another task on an already-full list.</p></div>
+      <div class="outcome"><span class="mark">&#10022;</span><p>You feel, in small daily moments, <strong>a little more like yourself again</strong>.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="band">
+  <div class="wrap about-grid">
+    <div class="about-photo"><img src="jacqui-portrait.jpg" alt="Jacqui McGregor"></div>
+    <div class="about-body">
+      <span class="eyebrow">Who this is from</span>
+      <h2>Hello, I'm Jacqui</h2>
+      <p>I am a counsellor and coach, and I work with women and families on the things that live in the nervous system - the exhaustion, the bracing, the weight of carrying too much for too long.</p>
+      <p>This practice is one I come back to myself, on the mornings when everything feels like a lot. It is gentle, it is practical, and it asks nothing of you but a few minutes. I wanted you to have it.</p>
+      <div class="sig">Jacqui x</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OPT-IN FORM ============ -->
+<section class="optin" id="get">
+  <div class="wrap">
+    <div class="optin-card" id="formCard">
+      <span class="eyebrow">Yes, send it to me</span>
+      <h2>Where should I send<br>your <em>practice?</em></h2>
+      <p class="lead">Pop your details in below. You will get the download straight away, and a copy in your inbox to keep.</p>
+
+      <form class="lead-form" id="leadForm" novalidate>
+        <div class="field">
+          <label for="firstName">First name</label>
+          <input type="text" id="firstName" name="firstName" placeholder="Your first name" autocomplete="given-name">
+          <span class="err-msg" data-for="firstName">Please add your first name.</span>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email">
+          <span class="err-msg" data-for="email">Please add a valid email.</span>
+        </div>
+        <div class="field">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" placeholder="04XX XXX XXX" autocomplete="tel">
+          <span class="err-msg" data-for="phone">Please add your phone number.</span>
+        </div>
+        <button type="submit" class="btn">Send me my practice</button>
+      </form>
+      <p class="form-fine">Your details are safe with me. No spam, ever - just the occasional gentle note you can leave anytime.</p>
+    </div>
+
+    <!-- success state -->
+    <div class="success" id="successCard">
+      <div class="tick">&#10003;</div>
+      <h2>Beautiful. It's on its way.</h2>
+      <p>Check your inbox for your copy of <em>The Morning Anchor</em>. You can also open it right here, right now.</p>
+      <a href="the-morning-anchor.pdf" class="btn" id="downloadBtn" download>Download The Morning Anchor</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="divider center"><span class="l"></span><span class="s">&#10047;</span><span class="l"></span></div>
+    <div class="name">Come home to yourself.</div>
+    <p style="margin-top:8px;">Jacqui McGregor &middot; Counsellor &amp; Coach</p>
+  </div>
+</footer>
+
+<script>
+  /* ================================================================
+     LEAD CAPTURE + INSTANT DOWNLOAD
+     ----------------------------------------------------------------
+     FORM_ENDPOINT: paste the lead destination here to store the lead
+     and trigger the confirmation email (e.g. a GHL form/webhook URL).
+     Leave as "" and the page still works - it reveals the instant
+     download, it just will not persist the lead or send the email.
+     ================================================================ */
+  const FORM_ENDPOINT = "https://jiquevvzrdavgqonvvug.supabase.co/functions/v1/jacqui-lead"; // Supabase edge function: stores lead + emails Jacqui
+
+  const form = document.getElementById('leadForm');
+  const formCard = document.getElementById('formCard');
+  const successCard = document.getElementById('successCard');
+
+  function normalisePhone(v) {
+    let p = (v || '').replace(/[\s\-\(\)]/g, '');
+    if (p.startsWith('0')) p = '+61' + p.slice(1);      // AU local -> E.164
+    else if (/^[1-9]/.test(p) && !p.startsWith('+')) p = '+61' + p;
+    return p;
+  }
+  function showErr(id, show) {
+    const input = document.getElementById(id);
+    const msg = document.querySelector('.err-msg[data-for="' + id + '"]');
+    input.classList.toggle('invalid', show);
+    if (msg) msg.classList.toggle('show', show);
+  }
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const firstName = document.getElementById('firstName').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phoneRaw = document.getElementById('phone').value.trim();
+
+    const okName = firstName.length > 0;
+    const okEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    const okPhone = phoneRaw.replace(/[^0-9]/g, '').length >= 8;
+    showErr('firstName', !okName);
+    showErr('email', !okEmail);
+    showErr('phone', !okPhone);
+    if (!okName || !okEmail || !okPhone) return;
+
+    const payload = {
+      firstName: firstName,
+      email: email,
+      phone: normalisePhone(phoneRaw),
+      source: 'The Morning Anchor - lead magnet',
+      submittedAt: new Date().toISOString()
+    };
+
+    if (FORM_ENDPOINT) {
+      try {
+        await fetch(FORM_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+      } catch (err) {
+        console.warn('Lead post failed, continuing to download.', err);
+      }
+    }
+
+    // Meta Pixel: count the sign-up as a Lead (fires once, when the sign-up goes through)
+    if (typeof fbq === 'function') fbq('track', 'Lead', { content_name: 'The Morning Anchor' });
+
+    formCard.style.display = 'none';
+    successCard.classList.add('show');
+    successCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+</script>
+</body>
+</html>
