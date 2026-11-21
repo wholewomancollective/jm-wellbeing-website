@@ -4,104 +4,182 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>Whole Woman Collective - handover steps</title>
+<title>Whole Woman Collective - your handover</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root { --leaf:#2F3721; --yellow:#E9D755; --sage:#85A678; --sage-deep:#4F693E; --sand:#D6CDBD; --cream:#FBF8EC; --burnt:#B4552B; }
+  :root { --leaf:#2F3721; --yellow:#E9D755; --sage-deep:#4F693E; --sand:#D6CDBD; --cream:#FBF8EC; --burnt:#B4552B; }
   * { box-sizing:border-box; margin:0; padding:0; }
-  body { font-family:'Work Sans',system-ui,sans-serif; font-weight:400; color:var(--leaf); background:var(--cream); line-height:1.55; }
-  .wrap { max-width:860px; margin:0 auto; padding:0 22px 80px; }
-  header { padding:48px 0 26px; }
+  body { font-family:'Work Sans',system-ui,sans-serif; font-weight:400; color:var(--leaf); background:var(--cream); line-height:1.6; }
+  .wrap { max-width:820px; margin:0 auto; padding:0 22px 90px; }
+  header { padding:54px 0 8px; }
   .eyebrow { font-size:.72rem; letter-spacing:.24em; text-transform:uppercase; font-weight:600; color:var(--sage-deep); }
-  h1 { font-family:'Cormorant Garamond',Georgia,serif; font-weight:400; font-size:clamp(2.1rem,6vw,3.2rem); line-height:1.05; margin:10px 0 12px; }
-  h1 em { font-style:italic; }
-  header p { max-width:40rem; }
-  .step { background:#fff; border-radius:10px; padding:26px 24px; margin-top:20px; box-shadow:0 8px 26px rgba(47,55,33,.08); border-left:6px solid var(--sand); }
-  .step.now { border-left-color:var(--yellow); }
-  .step .who { display:inline-block; font-size:.66rem; letter-spacing:.18em; text-transform:uppercase; font-weight:600; padding:4px 10px; border-radius:20px; background:var(--sand); }
-  .step.now .who { background:var(--yellow); }
-  .step.auto .who { background:#E4ECDF; color:var(--sage-deep); }
-  h2 { font-family:'Cormorant Garamond',Georgia,serif; font-weight:500; font-size:1.7rem; line-height:1.15; margin:12px 0 8px; }
-  .step p, .step li { font-size:.97rem; }
-  .step ol, .step ul { margin:10px 0 0 20px; }
-  .step li { margin-bottom:6px; }
-  .sub { font-weight:600; font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; color:var(--burnt); margin:20px 0 8px; }
-  .rec { display:grid; grid-template-columns:74px 92px 1fr auto; gap:10px; align-items:center; padding:10px 0; border-top:1px solid #EEE9DA; }
-  .rec:first-of-type { border-top:none; }
-  .rec .lab { font-size:.62rem; letter-spacing:.12em; text-transform:uppercase; color:#7b8468; display:block; }
-  .rec .v { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.95rem; font-weight:600; word-break:break-all; }
-  button.copy { font-family:inherit; font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; font-weight:600; padding:11px 16px; border-radius:6px; border:none; background:var(--leaf); color:#fff; cursor:pointer; min-width:92px; }
-  button.copy.done { background:var(--sage-deep); }
-  .del .v { text-decoration:line-through; color:var(--burnt); }
-  .note { background:#F6F1E2; border-radius:8px; padding:12px 14px; font-size:.9rem; margin-top:16px; }
+  h1 { font-family:'Cormorant Garamond',Georgia,serif; font-weight:400; font-size:clamp(2.3rem,7vw,3.6rem); line-height:1.04; margin:10px 0 18px; }
+  h1 em, h2 em { font-style:italic; color:var(--burnt); }
+  header p { max-width:38rem; margin-bottom:12px; font-size:1.03rem; }
+  h2 { font-family:'Cormorant Garamond',Georgia,serif; font-weight:500; font-size:1.9rem; line-height:1.12; margin:54px 0 6px; }
+  .lede { max-width:38rem; margin-bottom:6px; }
+  .address { background:#fff; border-radius:10px; padding:20px 22px; margin-top:22px; box-shadow:0 8px 26px rgba(47,55,33,.08); border-left:6px solid var(--yellow); display:flex; flex-wrap:wrap; gap:12px; align-items:center; justify-content:space-between; }
+  .address .big { font-family:'Cormorant Garamond',Georgia,serif; font-size:1.55rem; line-height:1.1; word-break:break-word; }
+  .address small { display:block; font-size:.86rem; margin-top:4px; }
+  .btn { display:inline-block; font-family:inherit; font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; font-weight:600; padding:12px 18px; border-radius:6px; border:none; background:var(--leaf); color:#fff; cursor:pointer; text-decoration:none; }
+  .btn.y { background:var(--yellow); color:var(--leaf); }
+  .card { background:#fff; border-radius:10px; padding:24px 22px; margin-top:16px; box-shadow:0 8px 26px rgba(47,55,33,.08); display:grid; grid-template-columns:54px 1fr; gap:6px 14px; }
+  .card .n { font-family:'Cormorant Garamond',Georgia,serif; font-size:2.6rem; line-height:1; color:var(--burnt); }
+  .card h3 { font-family:'Cormorant Garamond',Georgia,serif; font-weight:500; font-size:1.45rem; line-height:1.15; }
+  .card .time { font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; font-weight:600; color:var(--sage-deep); margin-top:2px; }
+  .card p { margin-top:8px; font-size:.97rem; }
+  .card .act { margin-top:14px; }
+  .steps { counter-reset:s; margin-top:14px; }
+  .steps li { list-style:none; counter-increment:s; position:relative; padding:0 0 14px 40px; font-size:.97rem; }
+  .steps li::before { content:counter(s); position:absolute; left:0; top:0; width:27px; height:27px; border-radius:50%; background:var(--sand); font-weight:600; font-size:.82rem; display:flex; align-items:center; justify-content:center; }
+  .prompt { background:#F6F1E2; border-radius:8px; padding:14px 14px 12px; margin-top:10px; }
+  .prompt .say { font-size:.66rem; letter-spacing:.16em; text-transform:uppercase; font-weight:600; color:var(--sage-deep); display:block; margin-bottom:6px; }
+  .prompt .text { font-size:.95rem; line-height:1.5; overflow-wrap:anywhere; }
+  .row div, .card p, .panel p, .steps li { overflow-wrap:anywhere; min-width:0; }
+  .card > div, .steps li { min-width:0; }
+  .prompt .copy { margin-top:10px; padding:9px 14px; }
+  .copy.done { background:var(--sage-deep); }
+  .type { font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; background:#F1ECDD; padding:1px 7px; border-radius:4px; font-size:.92em; }
+  .panel { background:#fff; border-radius:10px; padding:24px 22px; margin-top:18px; box-shadow:0 8px 26px rgba(47,55,33,.08); }
+  .panel h3 { font-family:'Cormorant Garamond',Georgia,serif; font-weight:500; font-size:1.35rem; margin-bottom:4px; }
+  .row { display:grid; grid-template-columns:190px 1fr; gap:6px 16px; padding:12px 0; border-top:1px solid #EEE9DA; font-size:.95rem; }
+  .row:first-of-type { border-top:none; }
+  .row .k { font-weight:600; }
+  ul.plain { margin:10px 0 0 20px; } ul.plain li { margin-bottom:8px; font-size:.97rem; }
   a { color:var(--sage-deep); font-weight:500; }
-  footer { margin-top:30px; font-size:.82rem; color:#69735a; }
-  @media (max-width:560px) {
-    .rec { grid-template-columns:1fr auto; }
-    .rec .c1, .rec .c2 { display:inline-block; margin-right:14px; }
-    .rec .cv { grid-column:1 / 2; }
-    .rec button { grid-row:1 / 3; grid-column:2; align-self:center; }
-  }
+  .sign { margin-top:46px; font-size:1.03rem; }
+  .sign .name { font-family:'Cormorant Garamond',Georgia,serif; font-size:1.7rem; font-style:italic; margin-top:6px; }
+  footer { margin-top:34px; font-size:.82rem; color:#69735a; }
+  @media (max-width:560px) { .card { grid-template-columns:40px 1fr; } .card .n { font-size:2rem; } .row { grid-template-columns:1fr; gap:2px; } }
 </style>
 </head>
 <body>
 <div class="wrap">
+
   <header>
-    <p class="eyebrow">Handover steps</p>
-    <h1>Whole Woman <em>Collective</em></h1>
-    <p>Everything left to do to finish moving the website into Jacqui's own accounts. Tap a Copy button, then paste the value where the step says.</p>
+    <p class="eyebrow">Your handover &nbsp;&middot;&nbsp; 21 November 2026</p>
+    <h1>Whole Woman Collective <em>is yours.</em></h1>
+    <p>Hi Jacqui,</p>
+    <p>What a session. Your website now sits in your own accounts and lives at your new address. 👏🏽👏🏽</p>
+    <p>Most of the work is done. There are three small things for you below. Everything after that is here for when you need it, so there is no rush to read it all today.</p>
   </header>
 
-  <section class="step now">
-    <span class="who">Step 1 &middot; Jacqui or Kelly &middot; do this now</span>
-    <h2>Point the new domain at the website</h2>
-    <p>Log in to Crazy Domains, open <span class="v" style="font-family:ui-monospace,Menlo,monospace;font-weight:600;">thewholewomancollective.com.au</span> and go to its DNS settings.</p>
+  <div class="address">
+    <div>
+      <div class="big">thewholewomancollective.com.au</div>
+      <small>Your old address, jmwellbeing.com.au, sends people here on its own. Old links still work.</small>
+    </div>
+    <a class="btn y" href="https://thewholewomancollective.com.au/" target="_blank" rel="noopener">Open your website</a>
+  </div>
 
-    <p class="sub">First, delete these two records</p>
-    <div class="rec del"><div class="c1"><span class="lab">Type</span>A</div><div class="c2"><span class="lab">Host</span>@ (blank)</div><div class="cv"><span class="lab">Points to</span><span class="v">27.124.125.171</span></div><div></div></div>
-    <div class="rec del"><div class="c1"><span class="lab">Type</span>A</div><div class="c2"><span class="lab">Host</span>www</div><div class="cv"><span class="lab">Points to</span><span class="v">27.124.125.171</span></div><div></div></div>
+  <h2>Three small things <em>for you</em></h2>
 
-    <p class="sub">Then add these five records</p>
-    <div class="rec"><div class="c1"><span class="lab">Type</span>A</div><div class="c2"><span class="lab">Host</span>@ (blank)</div><div class="cv"><span class="lab">Points to</span><span class="v">185.199.108.153</span></div><button class="copy" data-copy="185.199.108.153">Copy</button></div>
-    <div class="rec"><div class="c1"><span class="lab">Type</span>A</div><div class="c2"><span class="lab">Host</span>@ (blank)</div><div class="cv"><span class="lab">Points to</span><span class="v">185.199.109.153</span></div><button class="copy" data-copy="185.199.109.153">Copy</button></div>
-    <div class="rec"><div class="c1"><span class="lab">Type</span>A</div><div class="c2"><span class="lab">Host</span>@ (blank)</div><div class="cv"><span class="lab">Points to</span><span class="v">185.199.110.153</span></div><button class="copy" data-copy="185.199.110.153">Copy</button></div>
-    <div class="rec"><div class="c1"><span class="lab">Type</span>A</div><div class="c2"><span class="lab">Host</span>@ (blank)</div><div class="cv"><span class="lab">Points to</span><span class="v">185.199.111.153</span></div><button class="copy" data-copy="185.199.111.153">Copy</button></div>
-    <div class="rec"><div class="c1"><span class="lab">Type</span>CNAME</div><div class="c2"><span class="lab">Host</span>www</div><div class="cv"><span class="lab">Points to</span><span class="v">wholewomancollective.github.io</span></div><button class="copy" data-copy="wholewomancollective.github.io">Copy</button></div>
+  <div class="card">
+    <div class="n">1</div>
+    <div>
+      <h3>Switch on the padlock for every visitor</h3>
+      <div class="time">One tick &middot; about a minute</div>
+      <p>Your website already has its padlock. This tick sends every visitor to the secure version, even when they type your address the short way. Only you can tick it, because the website is in your name now.</p>
+      <p>Open the link below while you are signed in to GitHub as wholewomancollective. GitHub is where your website's files are kept. Find the part called Custom domain and tick the box that says Enforce HTTPS.</p>
+      <div class="act"><a class="btn" href="https://github.com/wholewomancollective/jm-wellbeing-website/settings/pages" target="_blank" rel="noopener">Open the setting</a></div>
+    </div>
+  </div>
 
-    <div class="note">Save the changes. Leave every other record alone. Do not change anything on the old jmwellbeing.com.au domain: it has to stay as it is so the old address can forward and the info@jmwellbeing.com.au email keeps working.</div>
-  </section>
+  <div class="card">
+    <div class="n">2</div>
+    <div>
+      <h3>Choose your colours</h3>
+      <div class="time">A look and a reply</div>
+      <p>Your brand board has three colour sets, A, B and C. The colours come from your own nature photos. Set A uses the four main colours as they appear in your photos.</p>
+      <p>Tell me A, B or C. Then I put your colours and your photos on the website.</p>
+      <div class="act"><a class="btn" href="https://thewholewomancollective.com.au/brand-board/" target="_blank" rel="noopener">Open your brand board</a></div>
+    </div>
+  </div>
 
-  <section class="step auto">
-    <span class="who">Step 2 &middot; done for you</span>
-    <h2>The website moves to the new address</h2>
-    <p>Once the records above are saved, the site is switched to thewholewomancollective.com.au, the old address is set to forward to it, and the padlock and the Meta pixel are checked on the new address. Nothing for Jacqui to do unless she is asked to tick one box in GitHub.</p>
-  </section>
+  <div class="card">
+    <div class="n">3</div>
+    <div>
+      <h3>Send me your favourites</h3>
+      <div class="time">When you have them</div>
+      <p>The photos you most want on your website, and any nature videos you have filmed yourself: water coming in over sand, sunsets, wattle. Put them in our shared Mentoring folder in Dropbox, where your nature photos already are.</p>
+    </div>
+  </div>
 
-  <section class="step">
-    <span class="who">Step 3 &middot; Jacqui</span>
-    <h2>Open two free accounts</h2>
-    <ol>
-      <li><a href="https://supabase.com/dashboard/sign-up" target="_blank" rel="noopener">Supabase</a>: sign up, then create one new project. Suggested project name: <span class="v" style="font-family:ui-monospace,Menlo,monospace;font-weight:600;">whole-woman-collective</span> <button class="copy" data-copy="whole-woman-collective" style="padding:6px 10px;min-width:0;margin-left:6px;">Copy</button><br>Region: Sydney. Save the database password it shows somewhere safe.</li>
-      <li>In Supabase, open the organisation's Team page and invite Kelly as a member. Kelly will give the email address to invite.</li>
-      <li><a href="https://resend.com/signup" target="_blank" rel="noopener">Resend</a>: sign up with the email address that should receive the "someone just signed up" messages. Keep the login. The key from this account gets pasted into Jacqui's own Supabase in the next step.</li>
+  <h2>Change your website <em>yourself</em></h2>
+  <p class="lede">You make changes by telling Claude AI what you want in plain words. Claude does the typing, shows you the change and publishes it when you say so.</p>
+
+  <div class="panel">
+    <h3>The first time only</h3>
+    <p>This brings a copy of your website onto your laptop so Claude can work on it.</p>
+    <ol class="steps">
+      <li>Open PowerShell, type <span class="type">claude</span> and press Enter, the same way you do now.</li>
+      <li>Copy the words below and paste them in.
+        <div class="prompt"><span class="say">Say this to Claude</span><div class="text" id="p1">Download my website from https://github.com/wholewomancollective/jm-wellbeing-website into a new folder called whole-woman-website inside my Documents folder. If GitHub asks me to sign in, walk me through it one step at a time. My GitHub username is wholewomancollective.</div><button class="btn copy" data-from="p1">Copy</button></div>
+      </li>
     </ol>
-  </section>
+  </div>
 
-  <section class="step auto">
-    <span class="who">Step 4 &middot; done for you</span>
-    <h2>The sign-up storage and the app move across</h2>
-    <p>The place that stores freebie sign-ups, and the engine behind the mother-daughter app, are set up inside Jacqui's own Supabase. Then one real test sign-up is run to check it is stored and the email arrives.</p>
-  </section>
+  <div class="panel">
+    <h3>Every time you want a change</h3>
+    <ol class="steps">
+      <li>Open PowerShell, type <span class="type">claude</span> and press Enter.</li>
+      <li>Say what you want. Start with the words below, then add your change at the end.
+        <div class="prompt"><span class="say">Say this to Claude</span><div class="text" id="p2">In my whole-woman-website folder, get the latest version of my website from GitHub first. Then make this change and show me what you changed before publishing: </div><button class="btn copy" data-from="p2">Copy</button></div>
+      </li>
+      <li>Claude will ask your permission before it changes anything. Read what it says, then say yes.</li>
+      <li>When you like what you see, say this.
+        <div class="prompt"><span class="say">Say this to Claude</span><div class="text" id="p3">Publish it to my live website.</div><button class="btn copy" data-from="p3">Copy</button></div>
+        The change shows on your website a minute or two later. Refresh the page to see it.
+      </li>
+    </ol>
+  </div>
 
-  <footer>This page is private: it is not linked from the website and is hidden from Google. It can be removed once the handover is finished.</footer>
+  <div class="panel">
+    <h3>A good first one to try</h3>
+    <p>Your Calmer Pathways page still shows 29 May 2026 as the next start date. Swap in your new date.</p>
+    <div class="prompt"><span class="say">Say this to Claude</span><div class="text" id="p4">In my whole-woman-website folder, get the latest version of my website from GitHub first. On the Calmer Pathways page, change the next cohort date from 29 May 2026 to [type your new date here], everywhere it appears. Show me what you changed before publishing.</div><button class="btn copy" data-from="p4">Copy</button></div>
+    <p style="margin-top:16px;">If a change ever looks wrong, say this and your website goes back to how it was.</p>
+    <div class="prompt"><span class="say">Say this to Claude</span><div class="text" id="p5">Undo the last change on my website and publish.</div><button class="btn copy" data-from="p5">Copy</button></div>
+  </div>
+
+  <h2>Where everything <em>lives</em></h2>
+  <p class="lede">These are in your own accounts, with your own logins. The one exception is your old address, at the bottom of the list.</p>
+  <div class="panel">
+    <div class="row"><div class="k">Your web address</div><div>thewholewomancollective.com.au, in your Crazy Domains account.</div></div>
+    <div class="row"><div class="k">Your website</div><div>In your GitHub account (username wholewomancollective), in the project called jm-wellbeing-website. It holds your home page, Calmer Pathways, the Morning Anchor freebie page, your brand board and this page.</div></div>
+    <div class="row"><div class="k">The Morning Anchor freebie</div><div><a href="https://thewholewomancollective.com.au/morning-anchor/" target="_blank" rel="noopener">thewholewomancollective.com.au/morning-anchor</a>. This is the link to share and to use in ads.</div></div>
+    <div class="row"><div class="k">Mother-daughter app</div><div>Also in your GitHub account, in the project called come-home-to-each-other. Its new address is <a href="https://wholewomancollective.github.io/come-home-to-each-other/" target="_blank" rel="noopener">wholewomancollective.github.io/come-home-to-each-other</a>.</div></div>
+    <div class="row"><div class="k">Ad tracking</div><div>Your Meta pixel is on your home page, Calmer Pathways and the freebie page. It is the tracker that tells Facebook and Instagram which ads worked. It counts page visits, and it counts a lead each time someone signs up for The Morning Anchor.</div></div>
+    <div class="row"><div class="k">Bookings</div><div>Zanda, as before. Every Book a Session button still goes to your Zanda page.</div></div>
+    <div class="row"><div class="k">Your email and old address</div><div>info@jmwellbeing.com.au runs through your old address, jmwellbeing.com.au. I still look after the settings for that address. Keep it renewed until you have a new email on your new address.</div></div>
+  </div>
+
+  <h2>What I am still <em>finishing for you</em></h2>
+  <div class="panel">
+    <ul class="plain">
+      <li>Moving the storage for your freebie sign-ups, and the engine behind the mother-daughter app, into your own Supabase account. Supabase is the small database that sits behind them.</li>
+      <li>Switching on an email to you each time someone signs up for The Morning Anchor. For this I will need a key from a free Resend account in your name. I will tell you when, and show you where it goes.</li>
+      <li>Putting your chosen colours and your own photos on the website, once you have picked A, B or C.</li>
+    </ul>
+  </div>
+
+  <h2>Next time <em>we meet</em></h2>
+  <p class="lede">In a week or two: your Meta ads plan, and one last check that every login is in your hands.</p>
+
+  <div class="sign">
+    <p>Any questions, message me. 🤗</p>
+    <p class="name">Kelly x</p>
+  </div>
+
+  <footer>This page is private. It is not linked from your website and is hidden from Google.</footer>
 </div>
 <script>
   document.querySelectorAll('button.copy').forEach(function (b) {
     b.addEventListener('click', function () {
-      var text = b.getAttribute('data-copy');
-      function ok() { var t = b.textContent; b.textContent = 'Copied'; b.classList.add('done'); setTimeout(function () { b.textContent = 'Copy'; b.classList.remove('done'); }, 1600); }
+      var text = document.getElementById(b.getAttribute('data-from')).textContent;
+      function ok() { b.textContent = 'Copied'; b.classList.add('done'); setTimeout(function () { b.textContent = 'Copy'; b.classList.remove('done'); }, 1600); }
       function fallback() { var ta = document.createElement('textarea'); ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); ok(); } catch (e) {} document.body.removeChild(ta); }
       if (navigator.clipboard && window.isSecureContext) { navigator.clipboard.writeText(text).then(ok, fallback); } else { fallback(); }
     });
