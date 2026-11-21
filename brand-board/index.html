@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Whole Woman Collective - Nature Brand Board</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --yellow: #E9D755; --sage: #85A678; --burnt: #CF724A; --sand: #D6CDBD;
+    --leaf: #2F3721; --cream: #FEFBD9; --burnt-deep: #B4552B; --sage-deep: #4F693E;
+    --paper: #FBF8EC;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Work Sans', system-ui, sans-serif; font-weight: 300; color: var(--leaf); background: var(--paper); line-height: 1.6; }
+  .serif { font-family: 'Cormorant Garamond', Georgia, serif; }
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 0 40px; }
+  .eyebrow { font-size: 0.72rem; letter-spacing: 0.26em; text-transform: uppercase; font-weight: 500; color: var(--sage-deep); }
+  h1 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(2.6rem, 6.4vw, 5.4rem); line-height: 1.02; letter-spacing: -0.01em; }
+  h1 em { font-style: italic; font-weight: 300; }
+  h2 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: clamp(1.8rem, 3.4vw, 2.7rem); line-height: 1.12; margin: 10px 0 14px; }
+  h2 em { color: var(--burnt-deep); font-style: italic; }
+  p.lead { max-width: 46rem; font-size: 1.04rem; }
+  section { padding: 76px 0; position: relative; }
+
+  /* texture layers: Jacqui's own sand + water photos, never flat colour */
+  .tex { position: relative; overflow: hidden; isolation: isolate; }
+  .tex::before { content: ''; position: absolute; inset: 0; z-index: -1; background: url('img/jacqui-tex-sand.jpg') center / cover; filter: grayscale(1) contrast(1.15) brightness(1.08); mix-blend-mode: multiply; opacity: 0.5; }
+  .tex.water::before { background-image: url('img/jacqui-tex-water.jpg'); opacity: 0.5; }
+  .tex.dark::before { mix-blend-mode: soft-light; opacity: 0.75; filter: grayscale(1) contrast(1.5) brightness(1.3); }
+
+  /* header */
+  header.top { background: var(--cream); padding: 84px 0 70px; }
+  header.top .meta { margin-top: 26px; display: flex; gap: 28px; flex-wrap: wrap; font-size: 0.86rem; color: #55603f; }
+  .rule { width: 120px; height: 2px; background: var(--yellow); margin: 26px 0 22px; }
+
+  /* mood grid */
+  .mood { display: grid; grid-template-columns: repeat(12, 1fr); grid-auto-rows: 150px; gap: 14px; margin-top: 34px; }
+  .mood figure { position: relative; overflow: hidden; border-radius: 4px; background: var(--sand); }
+  .mood img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .mood figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 26px 14px 10px; font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 500; color: #fff; background: linear-gradient(transparent, rgba(20,24,12,0.62)); }
+  .m1 { grid-column: span 5; grid-row: span 3; } .m2 { grid-column: span 4; grid-row: span 2; } .m3 { grid-column: span 3; grid-row: span 3; }
+  .m4 { grid-column: span 4; grid-row: span 2; } .m5 { grid-column: span 3; grid-row: span 2; } .m6 { grid-column: span 2; grid-row: span 2; }
+  .m7 { grid-column: span 3; grid-row: span 2; } .m8 { grid-column: span 4; grid-row: span 1; }
+
+  /* swatches */
+  .swatches { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 34px; }
+  .sw { border-radius: 6px; min-height: 300px; padding: 22px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 10px 30px rgba(47,55,33,0.10); }
+  .sw .from { display: flex; align-items: center; gap: 10px; font-size: 0.74rem; letter-spacing: 0.04em; font-weight: 500; }
+  .sw .from img { width: 46px; height: 46px; object-fit: cover; border-radius: 50%; border: 2px solid rgba(255,255,255,0.75); }
+  .sw .name { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.9rem; line-height: 1.05; }
+  .sw .hex { font-weight: 500; letter-spacing: 0.12em; font-size: 0.86rem; margin-top: 6px; }
+  .sw .use { font-size: 0.82rem; margin-top: 10px; max-width: 16rem; }
+  .sw.light { color: var(--leaf); } .sw.onwhite { color: #fff; }
+  .anchors { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 18px; }
+  .anchors .sw { min-height: 178px; } .anchors .sw .name { font-size: 1.6rem; }
+
+  /* flat vs textured */
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 30px; }
+  .panel { border-radius: 6px; min-height: 250px; padding: 30px; display: flex; flex-direction: column; justify-content: flex-end; }
+  .panel .tag { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 600; margin-bottom: 8px; }
+  .panel .big { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 2rem; line-height: 1.1; }
+
+  /* sample website pieces */
+  .sample-hero { border-radius: 6px; overflow: hidden; position: relative; min-height: 430px; display: flex; align-items: flex-end; margin-top: 30px; }
+  .sample-hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .sample-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(100deg, rgba(47,55,33,0.78) 0%, rgba(47,55,33,0.42) 48%, rgba(47,55,33,0.05) 100%); }
+  .sample-hero .inner { position: relative; z-index: 2; padding: 46px; color: #fff; max-width: 40rem; }
+  .sample-hero .inner .eyebrow { color: var(--yellow); }
+  .sample-hero h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(2.3rem, 5vw, 4rem); line-height: 1.02; margin: 12px 0 14px; }
+  .btn { display: inline-block; padding: 14px 26px; font-size: 0.74rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600; border-radius: 3px; text-decoration: none; }
+  .btn.y { background: var(--yellow); color: var(--leaf); } .btn.o { background: var(--burnt-deep); color: #fff; } .btn.line { border: 1px solid rgba(255,255,255,0.7); color: #fff; margin-left: 10px; }
+  .sample-row { display: grid; grid-template-columns: 1.15fr 1fr; gap: 22px; margin-top: 22px; }
+  .card { border-radius: 6px; padding: 40px; }
+  .card h4 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: 2rem; line-height: 1.1; margin: 10px 0 12px; }
+  .card .bar { width: 64px; height: 3px; background: var(--burnt); margin-bottom: 18px; }
+  .quote { color: #fff; position: relative; overflow: hidden; display: flex; align-items: flex-end; min-height: 300px; }
+  .quote img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .quote::after { content: ''; position: absolute; inset: 0; background: linear-gradient(transparent 20%, rgba(40,22,16,0.72)); }
+  .quote p { position: relative; z-index: 2; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 1.6rem; line-height: 1.25; }
+
+  /* mix bar + options */
+  .mix { display: flex; height: 64px; border-radius: 6px; overflow: hidden; margin-top: 26px; box-shadow: 0 10px 30px rgba(47,55,33,0.10); }
+  .mix div { display: flex; align-items: center; justify-content: center; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; }
+  .rules { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 26px; }
+  .rules div { border-top: 2px solid var(--yellow); padding-top: 14px; font-size: 0.93rem; }
+  .rules strong { font-weight: 500; display: block; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.35rem; margin-bottom: 4px; }
+  .options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 30px; }
+  .opt { background: #fff; border-radius: 6px; padding: 22px; box-shadow: 0 10px 30px rgba(47,55,33,0.08); }
+  .opt .chips { display: flex; height: 120px; border-radius: 4px; overflow: hidden; margin: 14px 0 12px; }
+  .opt .chips div { flex: 1; display: flex; align-items: flex-end; padding: 8px 6px; font-size: 0.62rem; letter-spacing: 0.06em; font-weight: 500; }
+  .opt h5 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.5rem; font-weight: 400; }
+  .opt p { font-size: 0.86rem; }
+  .pick { display: inline-block; background: var(--yellow); color: var(--leaf); font-size: 0.64rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; padding: 4px 10px; border-radius: 20px; margin-left: 8px; vertical-align: middle; }
+  footer { padding: 46px 0 70px; font-size: 0.84rem; color: #55603f; }
+
+  @media (max-width: 860px) {
+    .wrap { padding: 0 20px; } section { padding: 54px 0; }
+    .mood { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 170px; }
+    .mood figure { grid-column: span 1 !important; grid-row: span 1 !important; } .mood .m1, .mood .m8 { grid-column: span 2 !important; }
+    .swatches, .anchors { grid-template-columns: repeat(2, 1fr); } .sw { min-height: 240px; padding: 16px; } .sw .name { font-size: 1.5rem; }
+    .compare, .sample-row, .rules, .options { grid-template-columns: 1fr; }
+    .sample-hero .inner { padding: 26px; } .btn.line { margin: 10px 0 0 0; }
+    .mix div { font-size: 0.5rem; letter-spacing: 0.04em; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top tex">
+  <div class="wrap">
+    <p class="eyebrow">Nature brand board &nbsp;&middot;&nbsp; first look</p>
+    <div class="rule"></div>
+    <h1>Whole Woman <em>Collective</em></h1>
+    <p class="lead" style="margin-top:22px;">Bright yellow, sage green, burnt orange and sand beige. Every colour on this page was taken straight out of Jacqui's own nature photos, and every textured background is her own sand or sea sitting behind the colour.</p>
+    <div class="meta"><span>Founder: Jacqui McGregor</span><span>Prepared 21 November 2026</span><span>All photos: Jacqui's own</span></div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">The feeling</p>
+    <h2>Shore, sunset and <em>yellow in the light.</em></h2>
+    <p class="lead">These are photos Jacqui took herself. They set the mood for the site: water coming in over sand, warm evening sky, yellow flowers and soft green.</p>
+    <div class="mood">
+      <figure class="m1"><img src="img/jacqui-yellow-coast.jpg" alt="Yellow coastal flowers in soft light"><figcaption>Yellow by the sea</figcaption></figure>
+      <figure class="m2"><img src="img/jacqui-sunset-sea-wide.jpg" alt="Orange sunset over the sea"><figcaption>Burnt orange sky</figcaption></figure>
+      <figure class="m3"><img src="img/jacqui-shore-sand.jpg" alt="Waves coming in over wet sand"><figcaption>Water over sand</figcaption></figure>
+      <figure class="m4"><img src="img/jacqui-sage-dusk.jpg" alt="Soft green plants at dusk"><figcaption>Sage at dusk</figcaption></figure>
+      <figure class="m5"><img src="img/jacqui-yellow-blooms.jpg" alt="Bright yellow flowers"><figcaption>Bright yellow</figcaption></figure>
+      <figure class="m6"><img src="img/jacqui-shore-cove.jpg" alt="Small cove with waves on sand"><figcaption>Quiet cove</figcaption></figure>
+      <figure class="m7"><img src="img/jacqui-sunset-sea-tall.jpg" alt="Sunset reflecting on the water"><figcaption>Evening water</figcaption></figure>
+      <figure class="m8"><img src="img/wattle-2.jpg" alt="Golden wattle against blue sky"><figcaption>The moving wattle stays</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section style="background:#fff;">
+  <div class="wrap">
+    <p class="eyebrow">Suggested colours <span class="pick">Recommended</span></p>
+    <h2>Shore and Wattle. <em>Four colours, two anchors.</em></h2>
+    <p class="lead">Each swatch shows the photo the colour came from. The sand texture behind each one is from Jacqui's beach photo.</p>
+    <div class="swatches">
+      <div class="sw tex light" style="background-color: var(--yellow);">
+        <div class="from"><img src="img/jacqui-yellow-blooms.jpg" alt=""><span>From the yellow flowers</span></div>
+        <div><div class="name">Wattle Yellow</div><div class="hex">#E9D755</div><div class="use">Buttons, highlights and the moments you want people to look at first.</div></div>
+      </div>
+      <div class="sw tex light" style="background-color: var(--sage);">
+        <div class="from"><img src="img/jacqui-yellow-daisy.jpg" alt=""><span>From the leaves</span></div>
+        <div><div class="name">Sage Green</div><div class="hex">#85A678</div><div class="use">Calm sections, labels and soft backgrounds.</div></div>
+      </div>
+      <div class="sw tex light" style="background-color: var(--burnt);">
+        <div class="from"><img src="img/jacqui-sunset-sea-wide.jpg" alt=""><span>From the sunset</span></div>
+        <div><div class="name">Burnt Orange</div><div class="hex">#CF724A</div><div class="use">Warm accents, lines and headings in large type. Used in small amounts.</div></div>
+      </div>
+      <div class="sw tex light" style="background-color: var(--sand);">
+        <div class="from"><img src="img/jacqui-stone-flower.jpg" alt=""><span>From sand and stone</span></div>
+        <div><div class="name">Sand Beige</div><div class="hex">#D6CDBD</div><div class="use">The main background. Most of the site sits on this.</div></div>
+      </div>
+    </div>
+    <div class="anchors">
+      <div class="sw tex dark onwhite" style="background-color: var(--leaf);"><div class="from"><span>Anchor, from the dark leaves</span></div><div><div class="name">Deep Leaf</div><div class="hex">#2F3721</div><div class="use">All body text, and dark sections.</div></div></div>
+      <div class="sw tex light" style="background-color: var(--cream);"><div class="from"><span>Anchor, from the evening sky</span></div><div><div class="name">Soft Cream</div><div class="hex">#FEFBD9</div><div class="use">Light sections and cards.</div></div></div>
+      <div class="sw tex dark onwhite" style="background-color: var(--burnt-deep);"><div class="from"><span>Deeper shade of the orange</span></div><div><div class="name">Deep Burnt Orange</div><div class="hex">#B4552B</div><div class="use">Orange buttons and small orange text.</div></div></div>
+      <div class="sw tex dark onwhite" style="background-color: var(--sage-deep);"><div class="from"><span>Deeper shade of the sage</span></div><div><div class="name">Deep Sage</div><div class="hex">#4F693E</div><div class="use">Sage buttons and small sage text.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Texture behind the colour</p>
+    <h2>Same colour, <em>two very different feelings.</em></h2>
+    <p class="lead">On the left the colour sits flat. On the right the same colour has Jacqui's sand or sea behind it, so it feels like a real surface.</p>
+    <div class="compare">
+      <div class="panel" style="background: var(--sand);"><div class="tag">Flat</div><div class="big">Sand Beige on its own</div></div>
+      <div class="panel tex" style="background-color: var(--sand);"><div class="tag">With her sand behind it</div><div class="big">Sand Beige with texture</div></div>
+      <div class="panel" style="background: var(--yellow);"><div class="tag">Flat</div><div class="big">Wattle Yellow on its own</div></div>
+      <div class="panel tex" style="background-color: var(--yellow);"><div class="tag">With her sand behind it</div><div class="big">Wattle Yellow with texture</div></div>
+      <div class="panel" style="background: var(--leaf); color:#fff;"><div class="tag" style="color:var(--yellow);">Flat</div><div class="big">Deep Leaf on its own</div></div>
+      <div class="panel tex water dark" style="background-color: var(--leaf); color:#fff;"><div class="tag" style="color:var(--yellow);">With her evening sea behind it</div><div class="big">Deep Leaf with texture</div></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:#fff;">
+  <div class="wrap">
+    <p class="eyebrow">How it could look on the website</p>
+    <h2>The colours <em>in use.</em></h2>
+    <div class="sample-hero">
+      <img src="img/wattle-2.jpg" alt="Golden wattle">
+      <div class="inner">
+        <p class="eyebrow">Counselling &amp; Coaching &nbsp;&middot;&nbsp; Australia</p>
+        <h3>Whole Woman Collective</h3>
+        <p class="serif" style="font-style:italic; font-size:1.45rem; margin-bottom:24px;">Come home to yourself.</p>
+        <a class="btn y" href="#">Book a session</a><a class="btn line" href="#">Meet Jacqui</a>
+      </div>
+    </div>
+    <div class="sample-row">
+      <div class="card tex" style="background-color: var(--sand);">
+        <p class="eyebrow">About Jacqui &nbsp;&middot;&nbsp; Founder</p>
+        <h4>Where compassion meets <em style="color:var(--burnt-deep);">practical wisdom.</em></h4>
+        <div class="bar"></div>
+        <p style="max-width:30rem; margin-bottom:22px;">Sand in the background, sage for the small label, burnt orange for the line and the words you want to lift, yellow for the button.</p>
+        <a class="btn y" href="#">Book a session</a>
+      </div>
+      <div class="card quote">
+        <img src="img/jacqui-sunset-sea-tall.jpg" alt="Sunset on the water">
+        <p>"You are already the expert on your own life."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">How much of each</p>
+    <h2>Mostly sand, <em>yellow where it counts.</em></h2>
+    <div class="mix">
+      <div class="tex" style="flex:50; background-color:var(--sand);">Sand 50%</div>
+      <div style="flex:18; background:var(--cream);">Cream 18%</div>
+      <div style="flex:14; background:var(--sage);">Sage 14%</div>
+      <div style="flex:8; background:var(--yellow);">Yellow 8%</div>
+      <div style="flex:5; background:var(--burnt); color:#fff;">Orange</div>
+      <div style="flex:5; background:var(--leaf); color:#fff;">Leaf</div>
+    </div>
+    <div class="rules">
+      <div><strong>Yellow is for looking</strong>Buttons and highlights, always with Deep Leaf writing on top. Yellow writing on a light background is too hard to read, so yellow words only go on dark backgrounds.</div>
+      <div><strong>Orange is the spice</strong>Lines, small shapes and large headings. For orange buttons or small orange words, use the deeper orange so the writing stays easy to read.</div>
+      <div><strong>Nothing sits flat</strong>Every coloured area gets her sand or sea behind it at a low strength, and photos get a soft colour overlay so the writing on top stays clear.</div>
+    </div>
+  </div>
+</section>
+
+<section style="background:#fff;">
+  <div class="wrap">
+    <p class="eyebrow">Three ways to turn the dial</p>
+    <h2>Same four colours, <em>softer or bolder.</em></h2>
+    <div class="options">
+      <div class="opt">
+        <h5>A. Shore and Wattle <span class="pick">Recommended</span></h5>
+        <div class="chips"><div style="background:#E9D755;">#E9D755</div><div style="background:#85A678;">#85A678</div><div style="background:#CF724A;">#CF724A</div><div style="background:#D6CDBD;">#D6CDBD</div><div style="background:#2F3721; color:#fff;">#2F3721</div></div>
+        <p>The colours exactly as they appear in her photos. Bright and warm, still calm.</p>
+      </div>
+      <div class="opt">
+        <h5>B. Soft Morning</h5>
+        <div class="chips"><div style="background:#F0DE8A;">#F0DE8A</div><div style="background:#A1A38B;">#A1A38B</div><div style="background:#E0A675;">#E0A675</div><div style="background:#E6DCCB;">#E6DCCB</div><div style="background:#43413C; color:#fff;">#43413C</div></div>
+        <p>Butter yellow, grey sage and peach in place of orange. Gentler and quieter. The yellow is less bright.</p>
+      </div>
+      <div class="opt">
+        <h5>C. Sunset Bold</h5>
+        <div class="chips"><div style="background:#DAC43E;">#DAC43E</div><div style="background:#637C54; color:#fff;">#637C54</div><div style="background:#B4552B; color:#fff;">#B4552B</div><div style="background:#B1977C;">#B1977C</div><div style="background:#252418; color:#fff;">#252418</div></div>
+        <p>Gold yellow, deeper sage, deep burnt orange and wet sand. Stronger and more dramatic.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Photos on this board are Jacqui's own, from her shared Nature Photos folder. The wattle image is a still from the moving wattle already at the top of her website. Fonts match her current site: Cormorant Garamond for headings, Work Sans for reading text.</p>
+  </div>
+</footer>
+
+</body>
+</html>
