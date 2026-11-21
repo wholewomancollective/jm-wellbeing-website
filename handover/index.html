@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Whole Woman Collective - handover steps</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --leaf:#2F3721; --yellow:#E9D755; --sage:#85A678; --sage-deep:#4F693E; --sand:#D6CDBD; --cream:#FBF8EC; --burnt:#B4552B; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:'Work Sans',system-ui,sans-serif; font-weight:400; color:var(--leaf); background:var(--cream); line-height:1.55; }
+  .wrap { max-width:860px; margin:0 auto; padding:0 22px 80px; }
+  header { padding:48px 0 26px; }
+  .eyebrow { font-size:.72rem; letter-spacing:.24em; text-transform:uppercase; font-weight:600; color:var(--sage-deep); }
+  h1 { font-family:'Cormorant Garamond',Georgia,serif; font-weight:400; font-size:clamp(2.1rem,6vw,3.2rem); line-height:1.05; margin:10px 0 12px; }
+  h1 em { font-style:italic; }
+  header p { max-width:40rem; }
+  .step { background:#fff; border-radius:10px; padding:26px 24px; margin-top:20px; box-shadow:0 8px 26px rgba(47,55,33,.08); border-left:6px solid var(--sand); }
+  .step.now { border-left-color:var(--yellow); }
+  .step .who { display:inline-block; font-size:.66rem; letter-spacing:.18em; text-transform:uppercase; font-weight:600; padding:4px 10px; border-radius:20px; background:var(--sand); }
+  .step.now .who { background:var(--yellow); }
+  .step.auto .who { background:#E4ECDF; color:var(--sage-deep); }
+  h2 { font-family:'Cormorant Garamond',Georgia,serif; font-weight:500; font-size:1.7rem; line-height:1.15; margin:12px 0 8px; }
+  .step p, .step li { font-size:.97rem; }
+  .step ol, .step ul { margin:10px 0 0 20px; }
+  .step li { margin-bottom:6px; }
+  .sub { font-weight:600; font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; color:var(--burnt); margin:20px 0 8px; }
+  .rec { display:grid; grid-template-columns:74px 92px 1fr auto; gap:10px; align-items:center; padding:10px 0; border-top:1px solid #EEE9DA; }
+  .rec:first-of-type { border-top:none; }
+  .rec .lab { font-size:.62rem; letter-spacing:.12em; text-transform:uppercase; color:#7b8468; display:block; }
+  .rec .v { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.95rem; font-weight:600; word-break:break-all; }
+  button.copy { font-family:inherit; font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; font-weight:600; padding:11px 16px; border-radius:6px; border:none; background:var(--leaf); color:#fff; cursor:pointer; min-width:92px; }
+  button.copy.done { background:var(--sage-deep); }
+  .del .v { text-decoration:line-through; color:var(--burnt); }
+  .note { background:#F6F1E2; border-radius:8px; padding:12px 14px; font-size:.9rem; margin-top:16px; }
+  a { color:var(--sage-deep); font-weight:500; }
+  footer { margin-top:30px; font-size:.82rem; color:#69735a; }
+  @media (max-width:560px) {
+    .rec { grid-template-columns:1fr auto; }
+    .rec .c1, .rec .c2 { display:inline-block; margin-right:14px; }
+    .rec .cv { grid-column:1 / 2; }
+    .rec button { grid-row:1 / 3; grid-column:2; align-self:center; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="eyebrow">Handover steps</p>
+    <h1>Whole Woman <em>Collective</em></h1>
+    <p>Everything left to do to finish moving the website into Jacqui's own accounts. Tap a Copy button, then paste the value where the step says.</p>
+  </header>
+
+  <section class="step now">
+    <span class="who">Step 1 &middot; Jacqui or Kelly &middot; do this now</span>
+    <h2>Point the new domain at the website</h2>
+    <p>Log in to Crazy Domains, open <span class="v" style="font-family:ui-monospace,Menlo,monospace;font-weight:600;">thewholewomancollective.com.au</span> and go to its DNS settings.</p>
+
+    <p class="sub">First, delete these two records</p>
+    <div class="rec del"><div class="c1"><span class="lab">Type</span>A</div><div class="c2"><span class="lab">Host</span>@ (blank)</div><div class="cv"><span class="lab">Points to</span><span class="v">27.124.125.171</span></div><div></div></div>
+    <div class="rec del"><div class="c1"><span class="lab">Type</span>A</div><div class="c2"><span class="lab">Host</span>www</div><div class="cv"><span class="lab">Points to</span><span class="v">27.124.125.171</span></div><div></div></div>
+
+    <p class="sub">Then add these five records</p>
+    <div class="rec"><div class="c1"><span class="lab">Type</span>A</div><div class="c2"><span class="lab">Host</span>@ (blank)</div><div class="cv"><span class="lab">Points to</span><span class="v">185.199.108.153</span></div><button class="copy" data-copy="185.199.108.153">Copy</button></div>
+    <div class="rec"><div class="c1"><span class="lab">Type</span>A</div><div class="c2"><span class="lab">Host</span>@ (blank)</div><div class="cv"><span class="lab">Points to</span><span class="v">185.199.109.153</span></div><button class="copy" data-copy="185.199.109.153">Copy</button></div>
+    <div class="rec"><div class="c1"><span class="lab">Type</span>A</div><div class="c2"><span class="lab">Host</span>@ (blank)</div><div class="cv"><span class="lab">Points to</span><span class="v">185.199.110.153</span></div><button class="copy" data-copy="185.199.110.153">Copy</button></div>
+    <div class="rec"><div class="c1"><span class="lab">Type</span>A</div><div class="c2"><span class="lab">Host</span>@ (blank)</div><div class="cv"><span class="lab">Points to</span><span class="v">185.199.111.153</span></div><button class="copy" data-copy="185.199.111.153">Copy</button></div>
+    <div class="rec"><div class="c1"><span class="lab">Type</span>CNAME</div><div class="c2"><span class="lab">Host</span>www</div><div class="cv"><span class="lab">Points to</span><span class="v">wholewomancollective.github.io</span></div><button class="copy" data-copy="wholewomancollective.github.io">Copy</button></div>
+
+    <div class="note">Save the changes. Leave every other record alone. Do not change anything on the old jmwellbeing.com.au domain: it has to stay as it is so the old address can forward and the info@jmwellbeing.com.au email keeps working.</div>
+  </section>
+
+  <section class="step auto">
+    <span class="who">Step 2 &middot; done for you</span>
+    <h2>The website moves to the new address</h2>
+    <p>Once the records above are saved, the site is switched to thewholewomancollective.com.au, the old address is set to forward to it, and the padlock and the Meta pixel are checked on the new address. Nothing for Jacqui to do unless she is asked to tick one box in GitHub.</p>
+  </section>
+
+  <section class="step">
+    <span class="who">Step 3 &middot; Jacqui</span>
+    <h2>Open two free accounts</h2>
+    <ol>
+      <li><a href="https://supabase.com/dashboard/sign-up" target="_blank" rel="noopener">Supabase</a>: sign up, then create one new project. Suggested project name: <span class="v" style="font-family:ui-monospace,Menlo,monospace;font-weight:600;">whole-woman-collective</span> <button class="copy" data-copy="whole-woman-collective" style="padding:6px 10px;min-width:0;margin-left:6px;">Copy</button><br>Region: Sydney. Save the database password it shows somewhere safe.</li>
+      <li>In Supabase, open the organisation's Team page and invite Kelly as a member. Kelly will give the email address to invite.</li>
+      <li><a href="https://resend.com/signup" target="_blank" rel="noopener">Resend</a>: sign up with the email address that should receive the "someone just signed up" messages. Keep the login. The key from this account gets pasted into Jacqui's own Supabase in the next step.</li>
+    </ol>
+  </section>
+
+  <section class="step auto">
+    <span class="who">Step 4 &middot; done for you</span>
+    <h2>The sign-up storage and the app move across</h2>
+    <p>The place that stores freebie sign-ups, and the engine behind the mother-daughter app, are set up inside Jacqui's own Supabase. Then one real test sign-up is run to check it is stored and the email arrives.</p>
+  </section>
+
+  <footer>This page is private: it is not linked from the website and is hidden from Google. It can be removed once the handover is finished.</footer>
+</div>
+<script>
+  document.querySelectorAll('button.copy').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var text = b.getAttribute('data-copy');
+      function ok() { var t = b.textContent; b.textContent = 'Copied'; b.classList.add('done'); setTimeout(function () { b.textContent = 'Copy'; b.classList.remove('done'); }, 1600); }
+      function fallback() { var ta = document.createElement('textarea'); ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); ok(); } catch (e) {} document.body.removeChild(ta); }
+      if (navigator.clipboard && window.isSecureContext) { navigator.clipboard.writeText(text).then(ok, fallback); } else { fallback(); }
+    });
+  });
+</script>
+</body>
+</html>
