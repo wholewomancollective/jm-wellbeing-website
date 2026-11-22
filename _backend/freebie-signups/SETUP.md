@@ -119,7 +119,7 @@ Tell her first that this counts as one lead in her Meta ad tracking. That does n
 
 ### 9. Update the notes and tell her
 
-In `CLAUDE.md`, in the Connections section, change the sentence that says Kelly is moving the sign-ups across so it says the sign-ups have lived in Jacqui's own Supabase since today's date. Commit and push that with her yes.
+In `CLAUDE.md`, in the Connections section, find the sentence that starts "Until Jacqui has run those two jobs". Replace it with one that says her freebie sign-ups have saved into her own Supabase since today's date, and that the data behind her mother-daughter app stays in Kelly's project until the app job is done. If the app job is already done, say both live in her own Supabase. Commit and push that with her yes.
 
 Then tell Jacqui, in plain words:
 
